@@ -1,18 +1,18 @@
 ---
-title: My first post using Novela by Narative
-author: Dennis Brotzky
-date: 2019-04-30
+title: Novela by Narative를 사용한 첫 번째 포스트
+author: younho9
+date: 2020-04-30
 hero: ./images/hero.jpg
-excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
+excerpt: Gatsby에 대한 커뮤니티의 관심이 높아짐에 따라 누구나 이 놀라운 도구의 힘을 쉽게 이해할 수 있도록 더 많은 리소스를 만들려고 합니다.
 ---
 
-My first post using `@narative/gatsby-theme-novela`. Novela is built by the team at [Narative](https://narative.co), and built for everyone that loves the web.
+`@ narative / gatsby-theme-novela`를 사용한 첫 번째 게시물. 노벨라는 [Narative] (https://narative.co) 팀에 의해 만들어졌으며 웹을 좋아하는 모든 사람을 위해 만들어졌습니다.
 
 ## Headers
 
 # H1
 
-It is recommended to NOT use H1s as it is reserved for the article heading. Any H1 is set as an H2.
+H1은 기사 제목에 예약되어 있으므로 사용하지 않는 것이 좋다. 임의의 H1은 H2로 설정된다.
 
 ## H2
 
@@ -24,65 +24,73 @@ It is recommended to NOT use H1s as it is reserved for the article heading. Any 
 
 ###### H6
 
-## Emphasis
+## 강조
 
-Emphasis, aka italics, with _asterisks_ or _underscores_.
+이탤릭체, *asterisks* 나 _underscores_ 한 번으로 감싸줌.
 
-Strong emphasis, aka bold, with **asterisks** or **underscores**.
+볼드체, **asterisks** 나 __underscores__ 두 번으로 감싸줌.
 
-Combined emphasis with **asterisks and _underscores_**.
+볼드체와 이탤릭체의 결합, **asterisks _underscores_**.
 
-Strikethrough uses two tildes. ~~Scratch this.~~
+취소선은 물결 기호로 감싸줌. ~~Scratch this.~~
 
-## Lists
+## 리스트
 
-1. First ordered list item
-2. Another item
-3. Actual numbers don't matter, just that it's a number
+### 순서 있는 리스트
 
-- Unordered list can use asterisks
+1. 첫 번째 아이템
+2. 두 번째 아이템
+3. 세 번째 아이템
 
-* Or minuses
+### 순서 없는 리스트
 
-- Or pluses
+- 아이템
+- 아이템
+- 아이템
 
-## Links
+## 링크
 
-[I'm an inline-style link](https://www.google.com)
+[인라인 스타일 링크](https://www.google.com)
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+[타이틀이 있는 인라인 스타일 링크](https://www.google.com "Google's Homepage")
 
-[I'm a reference-style link][arbitrary case-insensitive reference text]
+[레퍼런스 스타일 링크][Arbitrary case-insensitive reference text]
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
+[리포지토리 파일에 대한 상대적 참조](../blob/master/LICENSE)
 
-[You can use numbers for reference-style link definitions][1]
+[참조 스타일 링크 정의에 숫자를 사용할 수 있음][1]
 
-Or leave it empty and use the [link text itself].
+또는 비워두고 [link text itself] 를 사용할 수 있음.
 
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <http://www.example.com> and sometimes
-example.com (but not on Github, for example).
+URL과 앵글 브래킷으로 감싼 URLs는 자동으로 링크로 전환된다.
+www.example.com 또는 https://www.example.com 그리고 때때로
+example.com (예: Github에서는 아님)
 
-Some text to show that the reference links can follow later.
+참조 링크가 나중에 따라올 수 있음을 보여 주는 텍스트.
 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 [1]: http://slashdot.org
 [link text itself]: http://www.reddit.com
 
-## Images
+## 이미지
 
 <div className="Image__Small">
   <img
     src="./images/article-image-2.jpg"
-    title="Logo Title Text 1"
-    alt="Alt text"
+    title="이미지 타이틀 텍스트"
+    alt="대체 텍스트"
   />
 </div>
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.
 
-## Code and Syntax Highlighting
+국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 국가는 지역간의 균형있는 발전을 위하여 지역경제를 육성할 의무를 진다.
+
+명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다. 재의의 요구가 있을 때에는 국회는 재의에 붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다.
+
+이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그 직무를 행한다.
+
+## 코드 문법 하이라이팅
 
 ```javascript
 var s = "JavaScript syntax highlighting";
@@ -90,8 +98,7 @@ alert(s);
 ```
 
 ```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
+언어가 표시되지 않았으므로 구문 강조 표시 안 함.
 ```
 
 ### JSX
@@ -106,25 +113,50 @@ export default props => (
 );
 ```
 
-## Blockquotes
+## 인용구
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.
+비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.
 
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
+국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 국가는 지역간의 균형있는 발전을 위하여 지역경제를 육성할 의무를 진다.
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다. 재의의 요구가 있을 때에는 국회는 재의에 붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다.
 
-## Horizontal Rule
+이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그 직무를 행한다.
 
-Horizontal Rule
+> 블록쿼터는 이메일에서 회신 텍스트를 모방하는 데 매우 편리하다.
+>
+> 이 선은 같은 인용문의 일부분이다.
 
-Three or more...
+비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.
+
+국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 국가는 지역간의 균형있는 발전을 위하여 지역경제를 육성할 의무를 진다.
+
+명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다. 재의의 요구가 있을 때에는 국회는 재의에 붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다.
+
+이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그 직무를 행한다.
+
+## 수평선
+
+수평선
+
+세 개 이상의 `-` 기호
 
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.
+
+국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 국가는 지역간의 균형있는 발전을 위하여 지역경제를 육성할 의무를 진다.
+
+명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다. 재의의 요구가 있을 때에는 국회는 재의에 붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다.
+
+이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그 직무를 행한다.
 
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다.
+
+국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 국가는 지역간의 균형있는 발전을 위하여 지역경제를 육성할 의무를 진다.
+
+명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다. 재의의 요구가 있을 때에는 국회는 재의에 붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다.
+
+이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그 직무를 행한다.
