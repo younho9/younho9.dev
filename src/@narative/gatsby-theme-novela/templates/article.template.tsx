@@ -18,6 +18,7 @@ import ArticleControls from "../sections/article/Article.Controls";
 import ArticlesNext from "../sections/article/Article.Next";
 import ArticleSEO from "../sections/article/Article.SEO";
 import ArticleShare from "../sections/article/Article.Share";
+import ArticleUtterances from "../sections/article/Article.Utterances";
 
 import { Template } from "@types";
 
@@ -93,6 +94,7 @@ const Article: Template = ({ pageContext, location }) => {
       <ArticleBody ref={contentSectionRef}>
         <MDXRenderer content={article.body}>
           <ArticleShare />
+          <ArticleUtterances repo="younho9/younho9.dev" />
         </MDXRenderer>
       </ArticleBody>
       {mailchimp && article.subscription && <Subscription />}
