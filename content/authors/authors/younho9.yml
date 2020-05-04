@@ -4,8 +4,8 @@ bio: |
 avatar: ./avatars/younho9.png
 social:
   - url: https://github.com/younho9
-  # - url: https://bit.ly/yh9blog
   - url: https://www.instagram.com/younho_9/
+  - url: https://www.notion.so/younho9-Blog-9ed630c8603541bab20662b4854a891f
   # - url: https://velog.io/@younho9
 
 featured: true
