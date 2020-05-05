@@ -60,6 +60,15 @@ module.exports = {
         trackingId: `UA-159972507-2`,
       }
     },
-    `gatsby-plugin-offline`
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://younho9.dev`,
+        sitemap: `https://younho9.dev/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/', disallow: '/authors/younho9'}],
+      }
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 };
