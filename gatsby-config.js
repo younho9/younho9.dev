@@ -60,6 +60,7 @@ module.exports = {
         trackingId: `UA-159972507-2`,
       }
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 };
