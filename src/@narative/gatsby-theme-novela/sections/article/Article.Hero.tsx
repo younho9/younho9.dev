@@ -90,7 +90,7 @@ const Header = styled.header`
 
   ${mediaqueries.desktop`
     padding-left: 53px;
-    max-width: calc(507px + 53px);
+    max-width: calc(680px + 53px);
     margin: 100px auto 70px;
   `}
 
