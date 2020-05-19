@@ -6,7 +6,6 @@ const Blockquote = styled.blockquote`
   margin: 20px auto 30px;
   color: ${p => p.theme.colors.articleText};
   font-family: ${p => p.theme.fonts.serif};
-  font-style: italic;
 
   ${mediaqueries.tablet`
     margin: 20px auto 30px;
