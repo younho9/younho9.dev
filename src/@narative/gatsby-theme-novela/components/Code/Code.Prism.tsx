@@ -178,7 +178,7 @@ const Container = styled.div`
   }
 
   ${mediaqueries.desktop`
-      left: -26px;
+    
     `};
 
   ${mediaqueries.tablet`
