@@ -17,6 +17,7 @@ const Blockquote = styled.blockquote`
     max-width: 880px !important;
     padding-right: 100px;
     padding-bottom: 0;
+    color: ${p => p.theme.colors.grey};
     width: 100%;
     margin: 0 auto;
     font-size: 36px;
