@@ -76,7 +76,7 @@ const ARTICLE_WIDTH = css`
   max-width: 680px;
 
   ${mediaqueries.desktop`
-    max-width: 507px;
+    max-width: 680px;
   `}
 
   ${mediaqueries.tablet`
@@ -128,7 +128,7 @@ const PrismCSS = p => css`
   .prism-code {
     overflow: auto;
     width: 100%;
-    max-width: 744px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 32px;
     font-size: 13px;
@@ -184,11 +184,11 @@ const PrismCSS = p => css`
     }
 
     ${mediaqueries.desktop`
-      left: -26px;
+      
     `};
 
     ${mediaqueries.tablet`
-      max-width: 526px;
+      max-width: 486px;
       padding: 20px 20px;
       left: 0;
     `};
@@ -244,7 +244,7 @@ const ImageCSS = css`
     `};
 
     ${mediaqueries.desktop`
-      max-width: 507px;
+      max-width: 680px;
     `}
 
     ${mediaqueries.tablet`
@@ -276,7 +276,7 @@ const ImageCSS = css`
     `};
 
     ${mediaqueries.desktop`
-      left: -26px;
+
     `};
 
     ${mediaqueries.tablet`
