@@ -6,7 +6,7 @@ const UnorderedList = styled.ul`
   counter-reset: list;
   color: ${p => p.theme.colors.articleText};
   position: relative;
-  padding: 15px 0 30px 30px;
+  padding: 15px 0 15px 30px;
   transition: ${p => p.theme.colorModeTransition};
   margin: 0 auto;
   font-size: 18px;
