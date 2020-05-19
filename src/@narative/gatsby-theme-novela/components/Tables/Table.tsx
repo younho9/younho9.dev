@@ -11,7 +11,7 @@ const StyledTable = styled.table`
   background: ${p => p.theme.colors.card};
   margin: 45px auto 85px;
   width: 100%;
-  max-width: 1004px;
+  max-width: 680px;
   border: 1px solid ${p => p.theme.colors.horizontalRule};
   border-radius: 5px;
   overflow: hidden;
@@ -19,6 +19,7 @@ const StyledTable = styled.table`
 
   ${mediaqueries.desktop`
     margin: 25px auto 65px;
+    max-width: 680px;
   `}
 
   ${mediaqueries.tablet`
