@@ -6,7 +6,7 @@ hero: ./images/hero.jpg
 excerpt: Gatsby에 대한 커뮤니티의 관심이 높아짐에 따라 누구나 이 놀라운 도구의 힘을 쉽게 이해할 수 있도록 더 많은 리소스를 만들려고 합니다.
 ---
 
-`@ narative / gatsby-theme-novela`를 사용한 첫 번째 게시물. 노벨라는 [Narative] (https://narative.co) 팀에 의해 만들어졌으며 웹을 좋아하는 모든 사람을 위해 만들어졌습니다.
+`@ narative / gatsby-theme-novela`를 사용한 첫 번째 게시물. 노벨라는 [Narative](https://narative.co) 팀에 의해 만들어졌으며 웹을 좋아하는 모든 사람을 위해 만들어졌습니다.
 
 ## Headers
 
@@ -26,9 +26,9 @@ H1은 기사 제목에 예약되어 있으므로 사용하지 않는 것이 좋�
 
 ## 강조
 
-이탤릭체, *asterisks* 나 _underscores_ 한 번으로 감싸줌.
+이탤릭체, _asterisks_ 나 _underscores_ 한 번으로 감싸줌.
 
-볼드체, **asterisks** 나 __underscores__ 두 번으로 감싸줌.
+볼드체, **asterisks** 나 **underscores** 두 번으로 감싸줌.
 
 볼드체와 이탤릭체의 결합, **asterisks _underscores_**.
 
@@ -54,7 +54,7 @@ H1은 기사 제목에 예약되어 있으므로 사용하지 않는 것이 좋�
 
 [타이틀이 있는 인라인 스타일 링크](https://www.google.com "Google's Homepage")
 
-[레퍼런스 스타일 링크][Arbitrary case-insensitive reference text]
+[레퍼런스 스타일 링크][arbitrary case-insensitive reference text]
 
 [리포지토리 파일에 대한 상대적 참조](../blob/master/LICENSE)
 
@@ -93,7 +93,7 @@ example.com (예: Github에서는 아님)
 ## 코드 문법 하이라이팅
 
 ```javascript
-var s = "JavaScript syntax highlighting";
+var s = 'JavaScript syntax highlighting';
 alert(s);
 ```
 
@@ -104,13 +104,11 @@ alert(s);
 ### JSX
 
 ```jsx
-import React from "react";
-import { ThemeProvider } from "theme-ui";
-import theme from "./theme";
+import React from 'react';
+import { ThemeProvider } from 'theme-ui';
+import theme from './theme';
 
-export default props => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-);
+export default props => <ThemeProvider theme={theme}>{props.children}</ThemeProvider>;
 ```
 
 ## 인용구
