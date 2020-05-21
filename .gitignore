@@ -69,3 +69,9 @@ yarn-error.log
 .yarn-integrity
 
 .netlify/
+
+# Notion
+notion/config.py
+
+# VSCode
+.vscode/
