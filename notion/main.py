@@ -1,4 +1,5 @@
 import argparse
+import config
 import os
 import sys
 
@@ -8,8 +9,8 @@ if __name__ == "__main__":
     description = "Export blog contents from Notion"
     parser = argparse.ArgumentParser(description=description)
 
-    url = "https://www.notion.so/younho9/Blog-post-younho9-dev-f48c98cb9344475f9b720956b2b72f99"
+    id = config.id
     token = os.environ.get("NOTION_TOKEN")
 
-    get_contents_from_notion(token, url)
+    get_contents_from_notion(token, id)
     
