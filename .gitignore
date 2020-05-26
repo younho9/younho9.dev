@@ -70,5 +70,8 @@ yarn-error.log
 
 .netlify/
 
+# Notion
+notion/config.py
+
 # VSCode
 .vscode/
