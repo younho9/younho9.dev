@@ -8,7 +8,7 @@ pipenv install
 
 echo -------------------------------------------------------
 echo 📝 Get blog posts from notion
-pipenv run python main.py
+pipenv run python notion_to_blog.py
 cd ..
 
 echo -------------------------------------------------------
