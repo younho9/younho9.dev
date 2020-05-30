@@ -2,7 +2,7 @@
 title: notion-py로 노션(Notion)을 내 블로그의 CMS로 사용하기
 author: younho9
 date: 2020-05-29
-excerpt: '매번 "블로그를 멋지게 꾸미고, 꾸준히 글을 작성해야지!" 하고 다짐했지만 항상 실패했다. 그럴 때마다 애꿎은 블로그 서비스를 탓했다.'
+excerpt: 매번 "블로그를 멋지게 꾸미고, 꾸준히 글을 작성해야지!" 하고 다짐했지만 항상 실패했다. 그럴 때마다 애꿎은 블로그 서비스를 탓했다.
 slug: notion-as-blog-cms
 hero: ./images/hero.png
 ---
@@ -31,9 +31,9 @@ hero: ./images/hero.png
 
 그런데 노션 콘텐츠의 SEO가 좋지 않았다. Share to the web을 켜놓아도 이 링크가 다른 웹 사이트에 공유되었을 때 구글에 검색되기 시작하는 것 같았다.
 
-![d30c6831-8794-4fcb-9d2a-65d5f7984aad](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7711c5b6-e2bc-4578-89d6-0d1a9a2d006c/F9F15A3F-3659-484E-BFB3-57A3B2F627C1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200529%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200529T050230Z&X-Amz-Expires=86400&X-Amz-Signature=4a2872137d54779d6c3cf584b6112a1562ac7262a353119563945d25031c4787&X-Amz-SignedHeaders=host)
+![d30c6831-8794-4fcb-9d2a-65d5f7984aad](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7711c5b6-e2bc-4578-89d6-0d1a9a2d006c/F9F15A3F-3659-484E-BFB3-57A3B2F627C1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050537Z&X-Amz-Expires=86400&X-Amz-Signature=e2b980a39a6d64fe4927dd91bc378a81aa739da3618a761a5ab5ae80b69c8791&X-Amz-SignedHeaders=host)
 
-![d77dfef7-7d8c-4e29-87ea-234418061124](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/60041841-1832-454c-9343-c4f4dca2ab08/_2020-05-29__1.39.25.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200529%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200529T050231Z&X-Amz-Expires=86400&X-Amz-Signature=c0090051580d3dd9e2dcb2ce3d26656e26dc472e74db6c5721fb9597e32322c9&X-Amz-SignedHeaders=host)
+![d77dfef7-7d8c-4e29-87ea-234418061124](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/60041841-1832-454c-9343-c4f4dca2ab08/_2020-05-29__1.39.25.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050537Z&X-Amz-Expires=86400&X-Amz-Signature=3484587d62d116c20b0608c01ac9af33ac18df76f328f22928b95b567f0a2145&X-Amz-SignedHeaders=host)
 
 > 당근마켓 팀 노션 페이지가 구글 검색에 노출이 잘되는 이유
 
@@ -82,13 +82,13 @@ hero: ./images/hero.png
 
 노션에선 **한 페이지 안에 여러 자식 페이지가** 있을 수 있다. 위의 글에서 소개한 파이썬 코드는 notion-py를 활용하여 한 페이지 안에 있는 여러 자식 페이지를 `mdx` 파일로 가져오는 코드이다.
 
-![8a6d6a44-4347-4ba1-935b-2697dbea0286](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4fda0de8-a607-439c-9b6c-06b143669510/_2020-05-28__12.48.47.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200529%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200529T050231Z&X-Amz-Expires=86400&X-Amz-Signature=623e1bde53b7c6b3096188aa425a2bf30ca319ce0671ed2c2f8d77add634aac6&X-Amz-SignedHeaders=host)
+![8a6d6a44-4347-4ba1-935b-2697dbea0286](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4fda0de8-a607-439c-9b6c-06b143669510/_2020-05-28__12.48.47.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050537Z&X-Amz-Expires=86400&X-Amz-Signature=b4c620cba87f97b8d7855d12504d7208505c6cca9bd11ae25e6f8b03c1fb1fe3&X-Amz-SignedHeaders=host)
 
 위와 같은 노션 페이지가 있다고 할 때, 안에 있는 자식 페이지들을 가져오기 위해 두 가지가 필요하다. **노션 계정에 부여된** **`token_v2`** 와 **페이지의** **`url`** 이다.
 
 페이지 `url` 은 주소창에서 그대로 가져오면 되고, `token_v2`는 크롬에서 `개발자도구(F12) > Application > Storage > Cookies > https://www.notion.so...` 에서 `token_v2` 의 `Value` 를 가져오면 된다.
 
-![390f3b80-425b-4282-9c4c-dfbc90d7aa6c](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/352575e2-b73e-45c6-b3a8-89506f1d613f/_2020-05-28__12.58.01.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200529%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200529T050231Z&X-Amz-Expires=86400&X-Amz-Signature=c6be3fd59326ea4a112a59f77069bf8db0004d3aca1c2da619a08bb4be4f1668&X-Amz-SignedHeaders=host)
+![390f3b80-425b-4282-9c4c-dfbc90d7aa6c](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/352575e2-b73e-45c6-b3a8-89506f1d613f/_2020-05-28__12.58.01.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050538Z&X-Amz-Expires=86400&X-Amz-Signature=ddf2bfb645d9376ddb1f8947e17d63a4a34e218654abd6a6c17737f18666f70c&X-Amz-SignedHeaders=host)
 
 ### 코드 실행하기
 
@@ -115,31 +115,31 @@ description: ""
 ---""" % (post.title, datetime.datetime.now())
     # Handle Title
     text = text + '\\n\\n' + '# ' + post.title + '\\n\\n'
-    for content in post.children:
+    for block in post.children:
         # Handles H1
-        if (content.type == 'header'):
-            text = text + '# ' + content.title + '\\n\\n'
+        if (block.type == 'header'):
+            text = text + '# ' + block.title + '\\n\\n'
         # Handles H2
-        if (content.type == 'sub_header'):
-            text = text + '## ' + content.title + '\\n\\n'
+        if (block.type == 'sub_header'):
+            text = text + '## ' + block.title + '\\n\\n'
         # Handles H3
-        if (content.type == 'sub_sub_header'):
-            text = text + '### ' + content.title + '\\n\\n'
+        if (block.type == 'sub_sub_header'):
+            text = text + '### ' + block.title + '\\n\\n'
         # Handles Code Blocks
-        if (content.type == 'code'):
-            text = text + '```\\n' + content.title + '\\n```\\n'
+        if (block.type == 'code'):
+            text = text + '```\\n' + block.title + '\\n```\\n'
         # Handles Images
-        if (content.type == 'image'):
-            text = text + '![' + content.id + '](' + content.source + ')\\n\\n'
+        if (block.type == 'image'):
+            text = text + '![' + block.id + '](' + block.source + ')\\n\\n'
         # Handles Bullets
-        if (content.type == 'bulleted_list'):
-            text = text + '* ' + content.title + '\\n'
+        if (block.type == 'bulleted_list'):
+            text = text + '* ' + block.title + '\\n'
         # Handles Dividers
-        if (content.type == 'divider'):
+        if (block.type == 'divider'):
             text = text + '---' + '\\n'
         # Handles Basic Text, Links, Single Line Code
-        if (content.type == 'text'):
-            text = text + content.title + '\\n'
+        if (block.type == 'text'):
+            text = text + block.title + '\\n'
     title = post.title.replace(' ', '-')
     title = title.replace(',', '')
     title = title.replace(':', '')
@@ -159,7 +159,7 @@ description: ""
 
 이 코드는 노션에 있는 글을 `mdx` 파일로 추출하여 저장하는데, 이 코드는 다음의 폴더 구조를 가정한다.
 
-```
+```plain text
 .
 ├── content
 │  └── blog
@@ -170,13 +170,13 @@ description: ""
 
 이 폴더 구조를 만들고 notion 폴더로 이동해 파이썬 코드를 실행하면, 해당 노션 페이지에 있는 자식 페이지가 `mdx` 파일로 추출된다.
 
-```
+```bash
 python get_blog_posts.py
 ```
 
-![05fcda97-0fbf-4ffe-95a0-df85797b6bf1](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/57d80ef0-fe2f-4360-b094-ee60dda1e4ab/_2020-05-28__9.47.55.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200529%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200529T050231Z&X-Amz-Expires=86400&X-Amz-Signature=75e89e95ef84106a1ed486d489d2b95d4ba442231b19a0f5ea1c9f8ecd7aee41&X-Amz-SignedHeaders=host)
+![05fcda97-0fbf-4ffe-95a0-df85797b6bf1](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/57d80ef0-fe2f-4360-b094-ee60dda1e4ab/_2020-05-28__9.47.55.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050538Z&X-Amz-Expires=86400&X-Amz-Signature=66480cc09d5da7acb0f5cd4c8fb92d3224cc8aea775fd2b9f9196c94ea80fab0&X-Amz-SignedHeaders=host)
 
-![fa06210d-c068-4fae-8221-f5bb988b4719](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4237f3d4-b78c-4444-9439-36d48641545c/_2020-05-28__1.19.24.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200529%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200529T050232Z&X-Amz-Expires=86400&X-Amz-Signature=30a86ae5bb987d32f8ddf2ded24b2e02bb0ed904b30e94c09c284129bc333e15&X-Amz-SignedHeaders=host)
+![fa06210d-c068-4fae-8221-f5bb988b4719](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4237f3d4-b78c-4444-9439-36d48641545c/_2020-05-28__1.19.24.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050538Z&X-Amz-Expires=86400&X-Amz-Signature=3f1ec6e92006de5ccab6e2a607e6f585af2a63b5f3bb59f54cf9efa93891d690&X-Amz-SignedHeaders=host)
 
 노션에 있는 포스트를 `mdx` 파일로 가져오는데 성공했다. Jekyll, Gatsby 등 마크다운을 지원하는 블로그의 포스트에 들어가는 헤더 데이터도 삽입할 수 있었다.
 
@@ -203,31 +203,31 @@ description: ""
 ---""" % (post.title, datetime.datetime.now())
     # Handle Title
     text = text + '\n\n' + '# ' + post.title + '\n\n'
-    for content in post.children:
+    for block in post.children:
         # Handles H1
-        if (content.type == 'header'):
-            text = text + '# ' + content.title + '\n\n'
+        if (block.type == 'header'):
+            text = text + '# ' + block.title + '\n\n'
         # Handles H2
-        if (content.type == 'sub_header'):
-            text = text + '## ' + content.title + '\n\n'
+        if (block.type == 'sub_header'):
+            text = text + '## ' + block.title + '\n\n'
         # Handles H3
-        if (content.type == 'sub_sub_header'):
-            text = text + '### ' + content.title + '\n\n'
+        if (block.type == 'sub_sub_header'):
+            text = text + '### ' + block.title + '\n\n'
         # Handles Code Blocks
-        if (content.type == 'code'):
-            text = text + '```\n' + content.title + '\n```\n'
+        if (block.type == 'code'):
+            text = text + '```\n' + block.title + '\n```\n'
         # Handles Images
-        if (content.type == 'image'):
-            text = text + '![' + content.id + '](' + content.source + ')\n\n'
+        if (block.type == 'image'):
+            text = text + '![' + block.id + '](' + block.source + ')\n\n'
         # Handles Bullets
-        if (content.type == 'bulleted_list'):
-            text = text + '* ' + content.title + '\n\n'
+        if (block.type == 'bulleted_list'):
+            text = text + '* ' + block.title + '\n\n'
         # Handles Dividers
-        if (content.type == 'divider'):
+        if (block.type == 'divider'):
             text = text + '---' + '\n\n'
         # Handles Basic Text, Links, Single Line Code
-        if (content.type == 'text'):
-            text = text + content.title + '\n\n'
+        if (block.type == 'text'):
+            text = text + block.title + '\n\n'
     title = post.title.replace(' ', '-')
     title = title.replace(',', '')
     title = title.replace(':', '')
@@ -243,9 +243,11 @@ description: ""
     file.write(text)
 ````
 
-![8257c640-266c-4f4a-b3fe-e4f02318e77b](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f22772b5-3698-4781-90be-411aae57f575/_2020-05-28__9.51.02.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200529%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200529T050232Z&X-Amz-Expires=86400&X-Amz-Signature=3471967970b293c7936798919092d88a05d17a86c557fb320bb88c4a7daabdb7&X-Amz-SignedHeaders=host)
+![8257c640-266c-4f4a-b3fe-e4f02318e77b](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f22772b5-3698-4781-90be-411aae57f575/_2020-05-28__9.51.02.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050538Z&X-Amz-Expires=86400&X-Amz-Signature=0e9df2e599d52450099db30782f21cfd310b91cc213828ac39c9a9087c98c05e&X-Amz-SignedHeaders=host)
 
 개행이 된 마크다운 문서로 추출되니 훨씬 깔끔해보인다!
+
+## 마치며
 
 이렇게 노션 페이지에 있는 하위 페이지들을 가져오는데 성공했다. 하지만 아직 아쉬운 점들이 있다.
 
