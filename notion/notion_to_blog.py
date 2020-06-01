@@ -54,6 +54,10 @@ excerpt: %s
         text = text + "hero: " + "./images/hero.jpg\n---\n\n"
         image_format = "jpg"
 
+    # Handles Post Image Source
+    image_sources = []
+    image_number = 0
+
     # Get blog post
     for block in post.children:
         # Handles H1
@@ -79,7 +83,14 @@ excerpt: %s
             text = text + "🔗 [" + block.title + "](" + block.link + ")\n\n"
         # Handles Images
         if (block.type == "image"):
-            text = text + "![" + block.id + "](" + block.source + ")\n\n"
+            image_sources.append(block.source)
+            if "png" in block.source:
+                text = text + "![image-" + str(image_number) + "](" + "./images/image-" + str(image_number) + ".png" + ")\n\n"
+            elif "jpg" in block.source:
+                text = text + "![image-" + str(image_number) + "](" + "./images/image-" + str(image_number) + ".jpg" + ")\n\n"
+            elif "jpeg" in block.source:
+                text = text + "![image-" + str(image_number) + "](" + "./images/image-" + str(image_number) + ".jpeg" + ")\n\n"
+            image_number += 1
         # Handles Bullets
         if (block.type == "bulleted_list"):
             text = text + "- " + block.title + "\n\n"
@@ -108,6 +119,15 @@ excerpt: %s
         elif "jpg" in post.hero[0]:
             urllib.request.urlretrieve(post.hero[0], dir_name + "/images/hero.jpg")
     
+    # Handles post Images
+    for index, image_source in enumerate(image_sources):
+        if "png" in image_source:
+            urllib.request.urlretrieve(image_source, dir_name + "/images/image-" + str(index) + ".png")
+        elif "jpg" in image_source:
+            urllib.request.urlretrieve(image_source, dir_name + "/images/image-" + str(index) + ".jpg")
+        elif "jpeg" in image_source:
+            urllib.request.urlretrieve(image_source, dir_name + "/images/image-" + str(index) + ".jpeg")
+
     file = open(dir_name + "/index.md", "w")
     print(text)
     print("✅ Successfully exported blog content to" + dir_name + "/index.md")
