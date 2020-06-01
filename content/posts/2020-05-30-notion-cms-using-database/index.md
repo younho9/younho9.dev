@@ -17,15 +17,15 @@ hero: ./images/hero.png
 
 다양한 프로퍼티를 사용해 작성 날짜, 상태, 태그, 작성자 등 **블로그 포스트에 필요한 헤더 데이터를 구성**할 수 있다.
 
-![22ecc53e-d0ca-430c-97db-469d949322f1](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/009fd1ac-3bd5-4f34-bba2-ecc113f35350/_2020-05-28__12.45.50.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050518Z&X-Amz-Expires=86400&X-Amz-Signature=a791a063b596b157e13f1b9308f1aca88fb17b87803dfb5c6cc4495c7a28f6ac&X-Amz-SignedHeaders=host)
+![image-0](./images/image-0.png)
 
 그리고 노션 데이터베이스는 이러한 프로퍼티들을 활용해서 **필터링하고 정렬하는 기능을 지원**하며, 테이블, 보드, 캘린더 등 다양한 뷰를 지원하기 때문에 콘텐츠들을 쉽게 파악할 수 있다.
 
-![2c10ee19-e567-4d08-b3e2-ca3f588159e9](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a3ce5592-80b1-407e-8e8e-448463a19e55/_2020-05-28__11.18.38.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050518Z&X-Amz-Expires=86400&X-Amz-Signature=cd210714cbdc5a8f971677bd46dd027e6b44bb7a72276bbe0a2187bb5399689e&X-Amz-SignedHeaders=host)
+![image-1](./images/image-1.png)
 
-![d1782c77-8b46-4fe3-ae80-a530b106217b](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4b6a0aec-0ae5-401d-a7d3-a1fe579371b5/_2020-05-28__11.24.07.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050519Z&X-Amz-Expires=86400&X-Amz-Signature=8510edb0357a0e96b3bd9058b72ecb49683d097bd8c31472043f78464edaec66&X-Amz-SignedHeaders=host)
+![image-2](./images/image-2.png)
 
-![3943b5ec-9fcf-49a2-a682-06c80c0d9004](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/164cc2b4-cfbb-4459-a59e-409e1b2aae57/_2020-05-28__11.23.37.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050519Z&X-Amz-Expires=86400&X-Amz-Signature=e9e94f3b073ed832a796d2b9bb8494cac753c588f7f85051918fc58cafee6047&X-Amz-SignedHeaders=host)
+![image-3](./images/image-3.png)
 
 ### 링크드 데이터베이스 (Linked database)
 
@@ -33,9 +33,9 @@ hero: ./images/hero.png
 
 원본 데이터베이스와 링크드 데이터베이스는 **같은 데이터베이스로, 데이터가 완전히 동기화**된다.
 
-![a864ef07-17ab-4025-a2dc-e4170c3cb933](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e2bcd04b-b747-4cf5-acdb-82a5a7a066dc/_2020-05-28__11.50.41.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050519Z&X-Amz-Expires=86400&X-Amz-Signature=52207ed6a829fc3a12f5530bfecdb4bf5eb758f79a221bdee6b767b8de5741a8&X-Amz-SignedHeaders=host)
+![image-4](./images/image-4.png)
 
-![8cce790e-d95f-4c9d-b03a-a62957ddaf46](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0208ba7e-19c4-4a1e-a6c0-c4c2bf075e33/_2020-05-28__11.51.05.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050519Z&X-Amz-Expires=86400&X-Amz-Signature=4befbbbac5e7c2c057130693a7f7f68a7715e129e53f370409b17d0fa755aca0&X-Amz-SignedHeaders=host)
+![image-5](./images/image-5.png)
 
 > 원본 데이터베이스와 페이지에 삽입한 링크드 데이터베이스. 왼쪽의 ↗화살표가 보인다.
 
@@ -45,19 +45,19 @@ hero: ./images/hero.png
 
 먼저 노션에 블로그 포스트를 관리할 데이터베이스를 만든다. 이 데이터베이스에 다양한 속성과 뷰를 추가하여 각자의 방식으로 블로그 CMS를 만들 수 있다.
 
-![440da14f-fd43-44c8-bc8d-996e3a5304be](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d0bd280f-ee72-4cb7-910b-8e336e97d10c/_2020-05-28__1.54.22.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050520Z&X-Amz-Expires=86400&X-Amz-Signature=f9846dc6eded2d7d38878f873a3f89669bd4344fd1ce7772473d5e97a2d6f602&X-Amz-SignedHeaders=host)
+![image-6](./images/image-6.png)
 
 그리고 빈 페이지를 하나 만들어, 이 데이터베이스의 링크드 데이터베이스를 인라인으로 추가한다.
 
-![be48be04-8797-42de-b1ff-cfc212772cc1](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/be4e54ef-3c40-4879-b281-c48926948a05/_2020-05-28__1.55.00.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050520Z&X-Amz-Expires=86400&X-Amz-Signature=0a7edda6102c6a20a3beaf1200701d3cf8f1ae341597142ebb13f61393a37fc8&X-Amz-SignedHeaders=host)
+![image-7](./images/image-7.png)
 
-왼쪽 사이드바에 있는 데이터베이스를 우클릭하여 링크를 복사하고 페이지에 붙여넣기하면 링크드 데이터베이스를 삽입된다.
+왼쪽 사이드바에 있는 데이터베이스를 우클릭하여 링크를 복사하고 페이지에 붙여넣기하면 링크드 데이터베이스가 삽입된다.
 
-![988f6656-20dd-42e0-a4b3-a2648d7d0f87](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d50f9d0a-0899-44d4-9de4-2a1b311121dc/_2020-05-28__12.59.03.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050520Z&X-Amz-Expires=86400&X-Amz-Signature=77b591db4398752232217307801970493dfa4ff3107e1032792a0c2be2909f6b&X-Amz-SignedHeaders=host)
+![image-8](./images/image-8.png)
 
 ### 데이터베이스 `id` 구하기
 
-위에서 링크드 데이터베이스를 페이지에 삽입한 것은 데이터베이스의 `id` 를 구하기 위해서 였다.
+위에서 링크드 데이터베이스를 페이지에 삽입한 것은 데이터베이스의 `id` 를 구하기 위해서였다.
 
 > 🙇‍♂️ 더 좋은 방법이 있다면 알려주시기 바랍니다.
 
@@ -179,13 +179,13 @@ description: ""
     file.write(text)
 ````
 
-![9e1590db-ede6-412c-8bb2-315cb594e31b](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7905ad85-bbf7-473f-aa9d-6caccafd79ee/_2020-05-28__2.50.48.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050520Z&X-Amz-Expires=86400&X-Amz-Signature=55d801c09386e1ca9da35c3b7666d841512acfcef7d6a5c6dfa00bfa0c8a0746&X-Amz-SignedHeaders=host)
+![image-9](./images/image-9.png)
 
 ### 데이터베이스의 `property` 가져오기
 
 데이터베이스에서 지정한 속성들 역시 가져와 활용할 수 있다. 예를 들어 작성 완료된 포스트만 가져온다거나, 포스트의 작성 날짜나 태그들을 가져와 헤더데이터로 사용하는 등으로 활용할 수 있다.
 
-![26b5333f-d0b0-4cfb-bd4a-f373fd9774ec](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/76250a83-d933-42dd-9f2c-b327ae212f19/_2020-05-28__3.50.28.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050521Z&X-Amz-Expires=86400&X-Amz-Signature=e1e0675182214151543a0da4a835027b0cf640187f989885245f3f94e6534ee7&X-Amz-SignedHeaders=host)
+![image-10](./images/image-10.png)
 
 ```python
 # get_database_properties.py
@@ -251,14 +251,14 @@ $ python get_post_properties.py
 
 이렇게 가져온 속성들을 블로그 포스트의 머리말 데이터로 사용해보자.
 
-![5230ce76-de56-4727-98a1-af5353f567a4](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fa938494-5525-43f5-b897-5a00f2d9c0b2/_2020-05-30__11.28.11.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050521Z&X-Amz-Expires=86400&X-Amz-Signature=f762e00586bbaa9b92264b0e059faa46336d5702a8573555b4b83668c7ce52f5&X-Amz-SignedHeaders=host)
+![image-11](./images/image-11.png)
 
 > `hero` : 썸네일 이미지
 > `excerpt` : 요약 문구
 
 내가 사용하고 있는 Gatsby 블로그에서는 이러한 머리말 데이터를 사용했다. 데이터베이스에 헤더를 위한 데이터들을 추가해주었다.
 
-![816e9f0a-8dc5-4ffd-8bf4-36a32af9c445](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/05d91a6c-bfaf-4594-9092-6d4824a2b82a/_2020-05-30__11.38.20.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050521Z&X-Amz-Expires=86400&X-Amz-Signature=52e3867bcdf7dd35c2edcc58682f1cf051b25fade871dd4c38386d41999a8cd2&X-Amz-SignedHeaders=host)
+![image-12](./images/image-12.png)
 
 이제 각 속성의 `slug` 값으로 접근하여 머릿말에 추가하면 된다.
 
@@ -296,7 +296,7 @@ excerpt: %s
 
 이후에 이 이미지 링크에서 이미지를 `./image/hero.xxx` 경로에 다운받을 것이다.
 
-![78923584-d5ba-434b-8ce4-583c23e9d240](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d8e5a0e5-3f85-48a8-9fe1-ffbb01a6c12f/_2020-05-30__12.05.53.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050521Z&X-Amz-Expires=86400&X-Amz-Signature=e488ff79460e264ab68a5d65548d349e814086e51cc4af1a87a6a974223af931&X-Amz-SignedHeaders=host)
+![image-13](./images/image-13.png)
 
 머릿말이 잘 구성되었다.
 
@@ -306,7 +306,7 @@ excerpt: %s
 
 여러 블록 타입에 대한 처리는 간단하게 `block.type` 으로 `type` 을 알아내고 `block.title` 로 접근해 내용을 가져올 수 있다.
 
-![e8d2840a-8dce-428e-ad51-b3e1559d295f](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fb7f82fb-adc5-412d-ba82-b3a23a7817f5/_2020-05-30__12.17.13.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050521Z&X-Amz-Expires=86400&X-Amz-Signature=37c5b9934ebb8b4216927c3e5219bd86e47ccae310f412a78a0ef8a945a01f21&X-Amz-SignedHeaders=host)
+![image-14](./images/image-14.png)
 
 ```python
 for post in posts:
@@ -333,7 +333,7 @@ excerpt: %s
         print(block)
 ```
 
-![537e8e73-26ec-487d-8e19-065bcf7294df](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/58a2a47a-4834-459d-9e60-c8ac6bfa4166/_2020-05-30__12.39.17.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050522Z&X-Amz-Expires=86400&X-Amz-Signature=f5a24c7fb9106628308205636bda794ab875002f3da5bc7bdeaaec3e068e87b1&X-Amz-SignedHeaders=host)
+![image-15](./images/image-15.png)
 
 이렇게 하면 간단하게 `block` 의 타입 이름과 `title` 에 어떤 내용이 담기는지 볼 수 있었다.
 
@@ -452,7 +452,7 @@ for post in posts:
 
 🔗 [urllib 패키지를 사용하여 인터넷 리소스를 가져오는 방법 - 파이썬 설명서 주석판](https://python.flowdas.com/howto/urllib2.html)
 
-![71c80b07-ca59-469b-8eb2-68a5e378906a](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1ddc03a1-1cc8-4861-850e-ec04ae1c9283/_2020-05-30__1.17.52.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050522Z&X-Amz-Expires=86400&X-Amz-Signature=18fb2ab00e76c51293f0da76d5d1059898aa376a042985e2621bab271f923888&X-Amz-SignedHeaders=host)
+![image-16](./images/image-16.png)
 
 원하는 위치에 이미지를 저장했다. 머리말에 `hero` 의 경로가 지정되어 있으므로 Gatsby 블로그에서는 이 이미지를 가져와 커버로 사용할 것이다.
 
@@ -480,7 +480,7 @@ for post in posts:
 
 ### notion-py는 비공식 노션 API이다
 
-![476dbf9e-0810-4256-898f-f031a584fd4a](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4ea5d2cc-7413-4503-9285-da39d457e878/_2020-05-28__4.07.52.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200530T050522Z&X-Amz-Expires=86400&X-Amz-Signature=8103d71698bacd453f0e5f5880f0fad31fb6d3c8bbcd7f3841d24b4c2a6575da&X-Amz-SignedHeaders=host)
+![image-17](./images/image-17.png)
 
 물론 notion-py가 "비공식" 노션 API이고, 노션에서는 곧 공식 API를 출시할 예정이라고 하기 때문에, 이 API를 언젠가 사용하지 못할 가능성이 있다.
 
