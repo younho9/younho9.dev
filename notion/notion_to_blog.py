@@ -29,8 +29,8 @@ for post in posts:
         continue
 
     # Handle Frontmatter
-    title = post.title.replace('[', '')
-    title = title.replace(']', '')
+    title = post.title.replace("[", "")
+    title = title.replace("]", "")
     text = """---
 title: %s
 author: younho9
@@ -46,13 +46,13 @@ excerpt: %s
     
     # Handles hero Image
     if not post.hero:
-        text = text + '---\n\n'
-    elif 'png' in post.hero[0]:
-        text = text + 'hero: ' + './images/hero.png\n---\n\n'
-        image_format = 'png'
-    elif 'jpg' in post.hero[0]:
-        text = text + 'hero: ' + './images/hero.jpg\n---\n\n'
-        image_format = 'jpg'
+        text = text + "---\n\n"
+    elif "png" in post.hero[0]:
+        text = text + "hero: " + "./images/hero.png\n---\n\n"
+        image_format = "png"
+    elif "jpg" in post.hero[0]:
+        text = text + "hero: " + "./images/hero.jpg\n---\n\n"
+        image_format = "jpg"
 
     # Get blog post
     for block in post.children:
@@ -69,11 +69,11 @@ excerpt: %s
         if (block.type == "code"):
             text = text + "```" + block.language.lower() + "\n" + block.title + "\n```\n\n"
         # Handles Callout Blocks
-        if (block.type == 'callout'):
-            text = text + '> ' + block.icon + ' ' + block.title + '\n\n'
+        if (block.type == "callout"):
+            text = text + "> " + block.icon + " " + block.title + "\n\n"
         # Handles Quote Blocks
-        if (block.type == 'quote'):
-            text = text + '> ' + block.title + '\n\n'
+        if (block.type == "quote"):
+            text = text + "> " + block.title + "\n\n"
         # Handles Bookmark Blocks
         if (block.type == "bookmark"):
             text = text + "🔗 [" + block.title + "](" + block.link + ")\n\n"
@@ -103,9 +103,9 @@ excerpt: %s
             os.mkdir(dir_name + "/images")
         except:
             pass
-        if 'png' in post.hero[0]:
+        if "png" in post.hero[0]:
             urllib.request.urlretrieve(post.hero[0], dir_name + "/images/hero.png")
-        elif 'jpg' in post.hero[0]:
+        elif "jpg" in post.hero[0]:
             urllib.request.urlretrieve(post.hero[0], dir_name + "/images/hero.jpg")
     
     file = open(dir_name + "/index.md", "w")
