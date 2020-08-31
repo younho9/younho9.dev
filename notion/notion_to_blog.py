@@ -5,8 +5,8 @@ import urllib.request
 from datetime import datetime
 from notion.client import NotionClient
 
+token = config.token
 collection_id = config.id
-token = os.environ.get("NOTION_TOKEN")
 
 client = NotionClient(token_v2=token)
 contents_collection = client.get_collection(collection_id)
@@ -105,15 +105,12 @@ excerpt: %s
     dir_name = "../content/posts/" + post.created_time.strftime("%Y-%m-%d") + "-" + slug
     try:
         os.mkdir(dir_name)
+        os.mkdir(dir_name + "/images")
     except:
         pass
 
     # Handles post cover Image
     if post.hero:
-        try:
-            os.mkdir(dir_name + "/images")
-        except:
-            pass
         if "png" in post.hero[0]:
             urllib.request.urlretrieve(post.hero[0], dir_name + "/images/hero.png")
         elif "jpg" in post.hero[0]:
