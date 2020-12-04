@@ -20,16 +20,16 @@ module.exports = {
       {
         name: `notion`,
         url: `https://www.notion.so/younho9-Blog-9ed630c8603541bab20662b4854a891f`,
-      }
+      },
     ],
   },
   plugins: [
     {
-      resolve: "@narative/gatsby-theme-novela",
+      resolve: '@narative/gatsby-theme-novela',
       options: {
-        contentPosts: "content/posts",
-        contentAuthors: "content/authors",
-        basePath: "/",
+        contentPosts: 'content/posts',
+        contentAuthors: 'content/authors',
+        basePath: '/',
         authorsPage: true,
         sources: {
           local: true,
@@ -51,22 +51,21 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-      },
+      options: {},
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-159972507-2`,
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: `https://younho9.dev`,
         sitemap: `https://younho9.dev/sitemap.xml`,
-        policy: [{ userAgent: '*', allow: '/', disallow: '/authors/younho9'}],
-      }
+        policy: [{ userAgent: '*', allow: '/', disallow: '/authors/younho9' }],
+      },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,

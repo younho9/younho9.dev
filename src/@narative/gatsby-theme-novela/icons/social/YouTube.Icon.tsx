@@ -1,15 +1,14 @@
-import React from "react";
+import React from 'react';
 
 import { Icon } from '@types';
 
-const YouTubeIcon: Icon = ({ fill = "white" }) => (
+const YouTubeIcon: Icon = ({ fill = 'white' }) => (
   <svg
     width="17"
     height="12"
     viewBox="0 0 17 12"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
       clipRule="evenodd"

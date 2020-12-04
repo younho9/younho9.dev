@@ -1,15 +1,14 @@
-import React from "react";
+import React from 'react';
 
 import { Icon } from '@types';
 
-const InstagramIcon: Icon = ({ fill = "white" }) => (
+const InstagramIcon: Icon = ({ fill = 'white' }) => (
   <svg
     width="13"
     height="13"
     viewBox="0 0 13 13"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
       clipRule="evenodd"

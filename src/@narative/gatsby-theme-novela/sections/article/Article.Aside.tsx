@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
-import styled from "@emotion/styled";
-import throttle from "lodash/throttle";
+import React, { useState, useRef, useEffect } from 'react';
+import styled from '@emotion/styled';
+import throttle from 'lodash/throttle';
 
-import HandleOverlap from "./Article.HandleOverlap";
+import HandleOverlap from './Article.HandleOverlap';
 
-import mediaqueries from "@styles/media";
-import { clamp } from "@utils";
+import mediaqueries from '@styles/media';
+import { clamp } from '@utils';
 
 interface AsideProps {
   contentHeight: number;
@@ -34,13 +34,13 @@ const Aside: React.FC<AsideProps> = ({ contentHeight, children }) => {
   const [shouldFixAside, setShouldFixAside] = useState<boolean>(false);
 
   const show = imageOffset && progress < 100;
-  const childrenWithProps = React.Children.map(children, child =>
-    React.cloneElement(child, { show }),
+  const childrenWithProps = React.Children.map(children, (child) =>
+    React.cloneElement(child, { show })
   );
 
   useEffect(() => {
     const imageRect = document
-      .getElementById("ArticleImage__Hero")
+      .getElementById('ArticleImage__Hero')
       .getBoundingClientRect();
 
     const imageOffsetFromTopOfWindow = imageRect.top + window.scrollY;
@@ -66,12 +66,12 @@ const Aside: React.FC<AsideProps> = ({ contentHeight, children }) => {
       }
     }, 20);
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
   }, [contentHeight]);
 
@@ -80,15 +80,14 @@ const Aside: React.FC<AsideProps> = ({ contentHeight, children }) => {
       <Align
         show={show}
         imageOffset={imageOffset}
-        shouldFixAside={shouldFixAside}
-      >
+        shouldFixAside={shouldFixAside}>
         <div ref={progressRef}>
           <HandleOverlap>{childrenWithProps}</HandleOverlap>
         </div>
       </Align>
     </AsideContainer>
   );
-}
+};
 
 export default Aside;
 
@@ -107,18 +106,18 @@ const Align = React.memo(styled.div<{
   shouldFixAside: boolean;
   imageOffset: number;
 }>`
-  position: ${p => (p.shouldFixAside ? "fixed" : "absolute")};
+  position: ${(p) => (p.shouldFixAside ? 'fixed' : 'absolute')};
   display: flex;
   transform: translateY(0px);
-  top: ${p => (p.shouldFixAside ? 0 : p.imageOffset)}px;
-  align-items: ${p => (p.shouldFixAside ? "center" : "flex-start")};
+  top: ${(p) => (p.shouldFixAside ? 0 : p.imageOffset)}px;
+  align-items: ${(p) => (p.shouldFixAside ? 'center' : 'flex-start')};
   height: 100vh;
   z-index: 3;
 
-  opacity: ${p => (p.show ? 1 : 0)};
-  visibility: ${p => (p.show ? "visible" : "hidden")};
-  transition: ${p =>
+  opacity: ${(p) => (p.show ? 1 : 0)};
+  visibility: ${(p) => (p.show ? 'visible' : 'hidden')};
+  transition: ${(p) =>
     p.show
-      ? "opacity 0.4s linear, visibility 0.4s linear"
-      : "opacity 0.2s linear, visibility 0.4s linear"};
+      ? 'opacity 0.4s linear, visibility 0.4s linear'
+      : 'opacity 0.2s linear, visibility 0.4s linear'};
 `);

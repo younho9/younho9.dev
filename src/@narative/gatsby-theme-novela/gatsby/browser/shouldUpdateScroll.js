@@ -14,7 +14,7 @@ module.exports = ({ routerProps, prevRouterProps, getSavedScrollPosition }) => {
   if (prevRouterProps) {
     window.localStorage.setItem(
       'previousPath',
-      prevRouterProps.location.pathname,
+      prevRouterProps.location.pathname
     );
   }
 

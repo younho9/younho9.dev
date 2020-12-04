@@ -37,7 +37,7 @@ const ArticleSEO: React.FC<ArticleSEOProps> = ({
   const name = results.allSite.edges[0].node.siteMetadata.name;
   const siteUrl = results.allSite.edges[0].node.siteMetadata.siteUrl;
 
-  const authorsData = authors.map(author => ({
+  const authorsData = authors.map((author) => ({
     '@type': 'Person',
     name: author.name,
   }));
@@ -75,7 +75,7 @@ const ArticleSEO: React.FC<ArticleSEOProps> = ({
       }
     }
   }
-`.replace(/"[^"]+"|(\s)/gm, function(matched, group1) {
+`.replace(/"[^"]+"|(\s)/gm, function (matched, group1) {
     if (!group1) {
       return matched;
     } else {
@@ -95,8 +95,7 @@ const ArticleSEO: React.FC<ArticleSEOProps> = ({
       timeToRead={article.timeToRead}
       published={article.date}
       pathname={location.pathname}
-      canonicalUrl={article.canonical_url}
-    >
+      canonicalUrl={article.canonical_url}>
       <script type="application/ld+json">{microdata}</script>
     </SEO>
   );

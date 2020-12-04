@@ -1,25 +1,25 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState } from 'react';
 
 export const GridLayoutContext = createContext({
-  gridLayout: "tiles",
+  gridLayout: 'tiles',
   hasSetGridLayout: false,
   setGridLayout: (tile: string) => {},
   getGridLayout: () => {},
 });
 
 const GridLayoutProvider: React.FC<{}> = ({ children }) => {
-  const initialLayout = "tiles";
+  const initialLayout = 'tiles';
 
   const [gridLayout, setGridLayout] = useState<string>(initialLayout);
   const [hasSetGridLayout, setHasSetGridLayout] = useState<boolean>(false);
 
   function setGridLayoutAndSave(tile: string) {
-    localStorage.setItem("gridLayout", tile || initialLayout);
+    localStorage.setItem('gridLayout', tile || initialLayout);
     setGridLayout(tile);
   }
 
   function getGridLayoutAndSave() {
-    setGridLayout(localStorage.getItem("gridLayout") || initialLayout);
+    setGridLayout(localStorage.getItem('gridLayout') || initialLayout);
     setHasSetGridLayout(true);
   }
 
@@ -30,8 +30,7 @@ const GridLayoutProvider: React.FC<{}> = ({ children }) => {
         hasSetGridLayout,
         setGridLayout: setGridLayoutAndSave,
         getGridLayout: getGridLayoutAndSave,
-      }}
-    >
+      }}>
       {children}
     </GridLayoutContext.Provider>
   );

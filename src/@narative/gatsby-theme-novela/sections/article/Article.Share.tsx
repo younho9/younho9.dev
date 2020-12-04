@@ -59,10 +59,10 @@ const ArticleShare: React.FC<{}> = () => {
 
         // We want to not show the menu float in code blocks
         const codeBlocks = Array.from(
-          article.getElementsByClassName('prism-code'),
+          article.getElementsByClassName('prism-code')
         );
-        const isHighlightedInCodeBlock = codeBlocks.some(block =>
-          window.getSelection().containsNode(block, true),
+        const isHighlightedInCodeBlock = codeBlocks.some((block) =>
+          window.getSelection().containsNode(block, true)
         );
 
         if (isHighlightedInCodeBlock) return;
@@ -111,14 +111,14 @@ const ArticleShare: React.FC<{}> = () => {
     }
 
     // attach all events
-    events.forEach(event =>
-      window.addEventListener(event, handleMenuFloatSettings),
+    events.forEach((event) =>
+      window.addEventListener(event, handleMenuFloatSettings)
     );
 
     return () => {
       // remove all events after mount
-      events.forEach(event =>
-        window.removeEventListener(event, handleMenuFloatSettings),
+      events.forEach((event) =>
+        window.removeEventListener(event, handleMenuFloatSettings)
       );
     };
   }, [show]);
@@ -166,8 +166,7 @@ const ArticleShare: React.FC<{}> = () => {
         display: show && focus ? 'flex' : 'none',
         pointerEvents: show && focus ? 'initial' : 'none',
       }}
-      isDark={isDark}
-    >
+      isDark={isDark}>
       <MenuText>Share: </MenuText>
       <ReferralLink disabled={!canTweet} share={share.twitter}>
         <Icons.Twitter width="18px" height="15px" />
@@ -193,7 +192,7 @@ function ReferralLink({ disabled, share, children }) {
     window.open(
       share,
       '',
-      'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600',
+      'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'
     );
   }
 
@@ -201,8 +200,7 @@ function ReferralLink({ disabled, share, children }) {
     <MenuShare
       href={disabled ? '' : share}
       onClick={handleClick}
-      disabled={disabled}
-    >
+      disabled={disabled}>
       <Hidden>Share the selected text</Hidden>
       {children}
     </MenuShare>
@@ -249,8 +247,8 @@ const MenuFloat = styled.div<{ isDark: boolean }>`
   width: ${MENU_WIDTH}px;
   height: ${MENU_HEIGHT}px;
   padding: 7px 11px 7px 19px;
-  color: ${p => p.theme.colors.grey};
-  background: ${p => (p.isDark ? '#fafafa' : '#000')};
+  color: ${(p) => p.theme.colors.grey};
+  background: ${(p) => (p.isDark ? '#fafafa' : '#000')};
   border-radius: 5px;
   font-size: 18px;
   font-weight: 600;
@@ -268,13 +266,13 @@ const MenuFloat = styled.div<{ isDark: boolean }>`
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 8px solid ${p => (p.isDark ? '#fafafa' : '#000')};
+    border-top: 8px solid ${(p) => (p.isDark ? '#fafafa' : '#000')};
     transition: border-color 200ms;
   }
 
   svg {
     path {
-      fill: ${p => (p.isDark ? '#000' : '#fff')};
+      fill: ${(p) => (p.isDark ? '#000' : '#fff')};
     }
   }
 `;
@@ -294,11 +292,11 @@ const MenuShare = styled.a<{ disabled: boolean }>`
   display: flex;
   align-items: center;
   padding: 16px 11px;
-  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${(p) => (p.disabled ? 'not-allowed' : 'pointer')};
 
   svg {
     path {
-      fill: ${p => (p.disabled ? '#F89797' : '')};
+      fill: ${(p) => (p.disabled ? '#F89797' : '')};
     }
   }
 `;

@@ -1,14 +1,14 @@
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
-import mediaqueries from "@styles/media";
+import mediaqueries from '@styles/media';
 
 /**
  * Example:
  * <Heading.h1>Lorem Ipsum</Heading.h1>
  */
 
-const commonStyles = p => css`
+const commonStyles = (p) => css`
   font-weight: bold;
   color: ${p.theme.colors.primary};
   font-family: ${p.theme.fonts.serif};

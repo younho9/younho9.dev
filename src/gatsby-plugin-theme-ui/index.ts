@@ -14,9 +14,9 @@ const breakpoints = [
 ];
 
 const fonts = {
-  serif: "sans-serif",
+  serif: 'sans-serif',
   sansSerif:
-   "'Source Sans Pro', 'APPLE SD Gothic Neo', HelveticaNeue, Helvetica, 'NanumGothic', '맑은 고딕', 'Malgun Gothic', arial, sans-serif",
+    "'Source Sans Pro', 'APPLE SD Gothic Neo', HelveticaNeue, Helvetica, 'NanumGothic', '맑은 고딕', 'Malgun Gothic', arial, sans-serif",
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 

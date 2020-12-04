@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import styled from "@emotion/styled";
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
-import theme from "prism-react-renderer/themes/oceanicNext";
+import React, { useState } from 'react';
+import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import styled from '@emotion/styled';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import theme from 'prism-react-renderer/themes/oceanicNext';
 
-import Icons from "@icons";
-import mediaqueries from "@styles/media";
-import { copyToClipboard } from "@utils";
+import Icons from '@icons';
+import mediaqueries from '@styles/media';
+import { copyToClipboard } from '@utils';
 
 interface CopyProps {
-  toCopy: string
+  toCopy: string;
 }
 
 const Copy: React.FC<CopyProps> = ({ toCopy }) => {
@@ -46,10 +46,10 @@ const RE = /{([\d,-]+)}/;
 function calculateLinesToHighlight(meta) {
   if (RE.test(meta)) {
     const lineNumbers = RE.exec(meta)[1]
-      .split(",")
-      .map(v => v.split("-").map(y => parseInt(y, 10)));
+      .split(',')
+      .map((v) => v.split('-').map((y) => parseInt(y, 10)));
 
-    return index => {
+    return (index) => {
       const lineNumber = index + 1;
       const inRange = lineNumbers.some(([start, end]) =>
         end ? lineNumber >= start && lineNumber <= end : lineNumber === start
@@ -75,13 +75,13 @@ const CodePrism: React.FC<CodePrismProps> = ({
 }) => {
   const shouldHighlightLine = calculateLinesToHighlight(metastring);
 
-  if (props["live"]) {
+  if (props['live']) {
     return (
       <Container>
         <LiveProvider code={codeString} noInline={true} theme={theme}>
-          <LiveEditor style={{ marginBottom: "3px", borderRadius: "2px" }} />
-          <LivePreview style={{ fontSize: "18px", borderRadius: "2px" }} />
-          <LiveError style={{ color: "tomato" }} />
+          <LiveEditor style={{ marginBottom: '3px', borderRadius: '2px' }} />
+          <LivePreview style={{ fontSize: '18px', borderRadius: '2px' }} />
+          <LiveError style={{ color: 'tomato' }} />
         </LiveProvider>
       </Container>
     );
@@ -90,16 +90,16 @@ const CodePrism: React.FC<CodePrismProps> = ({
       <Highlight {...defaultProps} code={codeString} language={language}>
         {({ className, tokens, getLineProps, getTokenProps }) => {
           return (
-            <div style={{ overflow: "auto" }}>
-              <pre className={className} style={{ position: "relative" }}>
+            <div style={{ overflow: 'auto' }}>
+              <pre className={className} style={{ position: 'relative' }}>
                 <Copy toCopy={codeString} />
                 {tokens.map((line, index) => {
                   const { className } = getLineProps({
                     line,
                     key: index,
                     className: shouldHighlightLine(index)
-                      ? "highlight-line"
-                      : ""
+                      ? 'highlight-line'
+                      : '',
                   });
 
                   return (
@@ -108,7 +108,7 @@ const CodePrism: React.FC<CodePrismProps> = ({
                       {line.map((token, key) => {
                         const { className, children } = getTokenProps({
                           token,
-                          key
+                          key,
                         });
 
                         return (
@@ -127,7 +127,7 @@ const CodePrism: React.FC<CodePrismProps> = ({
       </Highlight>
     );
   }
-}
+};
 
 export default CodePrism;
 
@@ -144,14 +144,14 @@ const CopyButton = styled.button`
     background: rgba(255, 255, 255, 0.07);
   }
 
-  &[data-a11y="true"]:focus::after {
-    content: "";
+  &[data-a11y='true']:focus::after {
+    content: '';
     position: absolute;
     left: -2%;
     top: -2%;
     width: 104%;
     height: 104%;
-    border: 2px solid ${p => p.theme.colors.accent};
+    border: 2px solid ${(p) => p.theme.colors.accent};
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.01);
   }
@@ -169,12 +169,12 @@ const Container = styled.div`
   font-size: 13px;
   margin: 15px auto 50px;
   border-radius: 5px;
-  font-family: ${p => p.theme.fonts.monospace} !important;
+  font-family: ${(p) => p.theme.fonts.monospace} !important;
 
   textarea,
   pre {
     padding: 32px !important;
-    font-family: ${p => p.theme.fonts.monospace} !important;
+    font-family: ${(p) => p.theme.fonts.monospace} !important;
   }
 
   ${mediaqueries.desktop`

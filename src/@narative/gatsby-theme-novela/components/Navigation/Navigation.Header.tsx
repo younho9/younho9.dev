@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import styled from "@emotion/styled";
-import { Link, navigate, graphql, useStaticQuery } from "gatsby";
-import { useColorMode } from "theme-ui";
+import React, { useState, useEffect } from 'react';
+import styled from '@emotion/styled';
+import { Link, navigate, graphql, useStaticQuery } from 'gatsby';
+import { useColorMode } from 'theme-ui';
 
-import Section from "@components/Section";
-import Logo from "@components/Logo";
+import Section from '@components/Section';
+import Logo from '@components/Logo';
 
-import Icons from "@icons";
-import mediaqueries from "@styles/media";
+import Icons from '@icons';
+import mediaqueries from '@styles/media';
 import {
   copyToClipboard,
   getWindowDimensions,
   getBreakpointFromTheme,
-} from "@utils";
+} from '@utils';
 
 const siteQuery = graphql`
   {
@@ -39,9 +39,8 @@ const DarkModeToggle: React.FC<{}> = () => {
       isDark={isDark}
       onClick={toggleColorMode}
       data-a11y="false"
-      aria-label={isDark ? "Activate light mode" : "Activate dark mode"}
-      title={isDark ? "Activate light mode" : "Activate dark mode"}
-    >
+      aria-label={isDark ? 'Activate light mode' : 'Activate dark mode'}
+      title={isDark ? 'Activate light mode' : 'Activate dark mode'}>
       <MoonOrSun isDark={isDark} />
       <MoonMask isDark={isDark} />
     </IconWrapper>
@@ -52,7 +51,7 @@ const SharePageButton: React.FC<{}> = () => {
   const [hasCopied, setHasCopied] = useState<boolean>(false);
   const [colorMode] = useColorMode();
   const isDark = colorMode === `dark`;
-  const fill = isDark ? "#fff" : "#000";
+  const fill = isDark ? '#fff' : '#000';
 
   function copyToClipboardOnClick() {
     if (hasCopied) return;
@@ -71,8 +70,7 @@ const SharePageButton: React.FC<{}> = () => {
       onClick={copyToClipboardOnClick}
       data-a11y="false"
       aria-label="Copy URL to clipboard"
-      title="Copy URL to clipboard"
-    >
+      title="Copy URL to clipboard">
       <Icons.Link fill={fill} />
       <ToolTip isDark={isDark} hasCopied={hasCopied}>
         Copied
@@ -83,24 +81,24 @@ const SharePageButton: React.FC<{}> = () => {
 
 const NavigationHeader: React.FC<{}> = () => {
   const [showBackArrow, setShowBackArrow] = useState<boolean>(false);
-  const [previousPath, setPreviousPath] = useState<string>("/");
+  const [previousPath, setPreviousPath] = useState<string>('/');
   const { sitePlugin } = useStaticQuery(siteQuery);
 
   const [colorMode] = useColorMode();
-  const fill = colorMode === "dark" ? "#fff" : "#000";
+  const fill = colorMode === 'dark' ? '#fff' : '#000';
   const { rootPath, basePath } = sitePlugin.pluginOptions;
 
   useEffect(() => {
     const { width } = getWindowDimensions();
-    const phablet = getBreakpointFromTheme("phablet");
+    const phablet = getBreakpointFromTheme('phablet');
 
-    const prev = localStorage.getItem("previousPath");
+    const prev = localStorage.getItem('previousPath');
     const previousPathWasHomepage =
-      prev === (rootPath || basePath) || (prev && prev.includes("/page/"));
-    const isNotPaginated = !location.pathname.includes("/page/");
+      prev === (rootPath || basePath) || (prev && prev.includes('/page/'));
+    const isNotPaginated = !location.pathname.includes('/page/');
 
     setShowBackArrow(
-      previousPathWasHomepage && isNotPaginated && width <= phablet,
+      previousPathWasHomepage && isNotPaginated && width <= phablet
     );
     setPreviousPath(prev);
   }, []);
@@ -113,8 +111,7 @@ const NavigationHeader: React.FC<{}> = () => {
           data-a11y="false"
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage"
-          back={showBackArrow ? "true" : "false"}
-        >
+          back={showBackArrow ? 'true' : 'false'}>
           {showBackArrow && (
             <BackArrowIconContainer>
               <Icons.ChevronLeft fill={fill} />
@@ -128,8 +125,7 @@ const NavigationHeader: React.FC<{}> = () => {
             <button
               onClick={() => navigate(previousPath)}
               title="Navigate back to the homepage"
-              aria-label="Navigate back to the homepage"
-            >
+              aria-label="Navigate back to the homepage">
               <Icons.Ex fill={fill} />
             </button>
           ) : (
@@ -183,20 +179,20 @@ const LogoLink = styled(Link)<{ back: string }>`
   position: relative;
   display: flex;
   align-items: center;
-  left: ${p => (p.back === "true" ? "-54px" : 0)};
+  left: ${(p) => (p.back === 'true' ? '-54px' : 0)};
 
   ${mediaqueries.desktop_medium`
     left: 0
   `}
 
   &[data-a11y="true"]:focus::after {
-    content: "";
+    content: '';
     position: absolute;
     left: -10%;
     top: -30%;
     width: 120%;
     height: 160%;
-    border: 2px solid ${p => p.theme.colors.accent};
+    border: 2px solid ${(p) => p.theme.colors.accent};
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }
@@ -221,17 +217,17 @@ const NavControls = styled.div`
 const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
   position: absolute;
   padding: 4px 13px;
-  background: ${p => (p.isDark ? "#000" : "rgba(0,0,0,0.1)")};
-  color: ${p => (p.isDark ? "#fff" : "#000")};
+  background: ${(p) => (p.isDark ? '#000' : 'rgba(0,0,0,0.1)')};
+  color: ${(p) => (p.isDark ? '#fff' : '#000')};
   border-radius: 5px;
   font-size: 14px;
   top: -35px;
-  opacity: ${p => (p.hasCopied ? 1 : 0)};
-  transform: ${p => (p.hasCopied ? "translateY(-3px)" : "none")};
+  opacity: ${(p) => (p.hasCopied ? 1 : 0)};
+  transform: ${(p) => (p.hasCopied ? 'translateY(-3px)' : 'none')};
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
@@ -241,7 +237,7 @@ const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 6px solid ${p => (p.isDark ? "#000" : "rgba(0,0,0,0.1)")};
+    border-top: 6px solid ${(p) => (p.isDark ? '#000' : 'rgba(0,0,0,0.1)')};
   }
 `;
 
@@ -261,14 +257,14 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
     opacity: 1;
   }
 
-  &[data-a11y="true"]:focus::after {
-    content: "";
+  &[data-a11y='true']:focus::after {
+    content: '';
     position: absolute;
     left: 0;
     top: -30%;
     width: 100%;
     height: 160%;
-    border: 2px solid ${p => p.theme.colors.accent};
+    border: 2px solid ${(p) => p.theme.colors.accent};
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }
@@ -291,29 +287,29 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: ${p => (p.isDark ? "4px" : "2px")} solid
-    ${p => p.theme.colors.primary};
-  background: ${p => p.theme.colors.primary};
-  transform: scale(${p => (p.isDark ? 0.55 : 1)});
+  border: ${(p) => (p.isDark ? '4px' : '2px')} solid
+    ${(p) => p.theme.colors.primary};
+  background: ${(p) => p.theme.colors.primary};
+  transform: scale(${(p) => (p.isDark ? 0.55 : 1)});
   transition: all 0.45s ease;
-  overflow: ${p => (p.isDark ? "visible" : "hidden")};
+  overflow: ${(p) => (p.isDark ? 'visible' : 'hidden')};
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     right: -9px;
     top: -9px;
     height: 24px;
     width: 24px;
-    border: 2px solid ${p => p.theme.colors.primary};
+    border: 2px solid ${(p) => p.theme.colors.primary};
     border-radius: 50%;
-    transform: translate(${p => (p.isDark ? "14px, -14px" : "0, 0")});
-    opacity: ${p => (p.isDark ? 0 : 1)};
+    transform: translate(${(p) => (p.isDark ? '14px, -14px' : '0, 0')});
+    opacity: ${(p) => (p.isDark ? 0 : 1)};
     transition: transform 0.45s ease;
   }
 
   &::after {
-    content: "";
+    content: '';
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -321,18 +317,18 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
     position: absolute;
     top: 50%;
     left: 50%;
-    box-shadow: 0 -23px 0 ${p => p.theme.colors.primary},
-      0 23px 0 ${p => p.theme.colors.primary},
-      23px 0 0 ${p => p.theme.colors.primary},
-      -23px 0 0 ${p => p.theme.colors.primary},
-      15px 15px 0 ${p => p.theme.colors.primary},
-      -15px 15px 0 ${p => p.theme.colors.primary},
-      15px -15px 0 ${p => p.theme.colors.primary},
-      -15px -15px 0 ${p => p.theme.colors.primary};
-    transform: scale(${p => (p.isDark ? 1 : 0)});
+    box-shadow: 0 -23px 0 ${(p) => p.theme.colors.primary},
+      0 23px 0 ${(p) => p.theme.colors.primary},
+      23px 0 0 ${(p) => p.theme.colors.primary},
+      -23px 0 0 ${(p) => p.theme.colors.primary},
+      15px 15px 0 ${(p) => p.theme.colors.primary},
+      -15px 15px 0 ${(p) => p.theme.colors.primary},
+      15px -15px 0 ${(p) => p.theme.colors.primary},
+      -15px -15px 0 ${(p) => p.theme.colors.primary};
+    transform: scale(${(p) => (p.isDark ? 1 : 0)});
     transition: all 0.35s ease;
 
-    ${p => mediaqueries.tablet`
+    ${(p) => mediaqueries.tablet`
       transform: scale(${p.isDark ? 0.92 : 0});
     `}
   }
@@ -346,10 +342,10 @@ const MoonMask = styled.div<{ isDark: boolean }>`
   width: 24px;
   border-radius: 50%;
   border: 0;
-  background: ${p => p.theme.colors.background};
-  transform: translate(${p => (p.isDark ? "14px, -14px" : "0, 0")});
-  opacity: ${p => (p.isDark ? 0 : 1)};
-  transition: ${p => p.theme.colorModeTransition}, transform 0.45s ease;
+  background: ${(p) => p.theme.colors.background};
+  transform: translate(${(p) => (p.isDark ? '14px, -14px' : '0, 0')});
+  opacity: ${(p) => (p.isDark ? 0 : 1)};
+  transition: ${(p) => p.theme.colorModeTransition}, transform 0.45s ease;
 `;
 
 const Hidden = styled.span`

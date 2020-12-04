@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-import mediaqueries from "@styles/media";
+import mediaqueries from '@styles/media';
 
 const Section = styled.section<{ narrow?: boolean }>`
   width: 100%;
@@ -12,7 +12,7 @@ const Section = styled.section<{ narrow?: boolean }>`
     max-width: 850px;
   `};
 
-  ${p =>
+  ${(p) =>
     p.narrow
       ? mediaqueries.tablet`
           padding: 0 2rem;

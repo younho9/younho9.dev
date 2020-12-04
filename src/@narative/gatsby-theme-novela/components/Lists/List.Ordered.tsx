@@ -4,11 +4,11 @@ import mediaqueries from '@styles/media';
 const OrderedList = styled.ol`
   list-style: none;
   counter-reset: list;
-  color: ${p => p.theme.colors.articleText};
+  color: ${(p) => p.theme.colors.articleText};
   position: relative;
   padding: 15px 0 15px 30px;
   margin: 0 auto;
-  transition: ${p => p.theme.colorModeTransition};
+  transition: ${(p) => p.theme.colorModeTransition};
   font-size: 18px;
 
   width: 100%;
@@ -54,7 +54,7 @@ const OrderedList = styled.ol`
     width: 3rem;
     display: inline-block;
     position: absolute;
-    color: ${p => p.theme.colors.articleText};
+    color: ${(p) => p.theme.colors.articleText};
   }
 
   li::before {

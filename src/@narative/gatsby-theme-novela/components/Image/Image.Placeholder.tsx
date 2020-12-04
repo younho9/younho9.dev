@@ -1,7 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
-import styled from "@emotion/styled";
+import React, { useRef, useEffect, useState } from 'react';
+import styled from '@emotion/styled';
 
-import mediaqueries from "@styles/media";
+import mediaqueries from '@styles/media';
 
 const Container = styled.div`
   display: flex;
@@ -29,8 +29,8 @@ const ImagePlaceholder: React.FC<{}> = (props) => {
     const handleResize = () =>
       setDimensions(containerRef.current.getBoundingClientRect());
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (

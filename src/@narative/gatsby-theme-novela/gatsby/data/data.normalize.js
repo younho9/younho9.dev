@@ -84,7 +84,7 @@ module.exports.contentful = {
   authors: ({ node: author }) => {
     return {
       ...author,
-      social: author.social.map(s => ({ url: s })),
+      social: author.social.map((s) => ({ url: s })),
       slug: author.fields.slug,
       authorsPage: author.fields.authorsPage,
     };

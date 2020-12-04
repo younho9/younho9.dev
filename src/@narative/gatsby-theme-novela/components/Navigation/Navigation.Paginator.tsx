@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
-import { Link } from "gatsby";
-import { Helmet } from "react-helmet";
+import React, { Component } from 'react';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
+import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
-import mediaqueries from "@styles/media";
-import { range } from "@utils";
+import mediaqueries from '@styles/media';
+import { range } from '@utils';
 
-import { IPaginator } from "@types";
+import { IPaginator } from '@types';
 
 /**
  * <Paginator />
@@ -75,7 +75,7 @@ class Paginator extends Component<IPaginator, {}> {
       truncatedRange.splice(
         pagesRange.length - 1 - maxPages,
         0,
-        pagesRange[0] - 1,
+        pagesRange[0] - 1
       );
     }
 
@@ -100,11 +100,10 @@ class Paginator extends Component<IPaginator, {}> {
           key={`PaginatorPage_${page}`}
           to={this.getFullPath(page)}
           style={{ opacity: current === page ? 1 : 0.3 }}
-          className="Paginator__pageLink"
-        >
+          className="Paginator__pageLink">
           {page}
         </PageNumberBUtton>
-      ),
+      )
     );
   }
 
@@ -114,10 +113,10 @@ class Paginator extends Component<IPaginator, {}> {
    * but note there's special behaviour for page 1 where the URL should be / not /page/1
    */
   getFullPath = (n: number) => {
-    if (this.pageRoot === "/") {
-      return n === 1 ? this.pageRoot : this.pageRoot + "page/" + n;
+    if (this.pageRoot === '/') {
+      return n === 1 ? this.pageRoot : this.pageRoot + 'page/' + n;
     } else {
-      return n === 1 ? this.pageRoot : this.pageRoot + "/page/" + n;
+      return n === 1 ? this.pageRoot : this.pageRoot + '/page/' + n;
     }
   };
 
@@ -153,7 +152,7 @@ class Paginator extends Component<IPaginator, {}> {
 
 export default Paginator;
 
-const paginationItemMixin = p => css`
+const paginationItemMixin = (p) => css`
   line-height: 1;
   color: ${p.theme.colors.primary};
   padding: 0;
@@ -184,7 +183,7 @@ const PageButton = styled(Link)`
   font-weight: 600;
   font-size: 18px;
   text-decoration: none;
-  color: ${p => p.theme.colors.primary};
+  color: ${(p) => p.theme.colors.primary};
   ${paginationItemMixin}
 
   &:hover,
@@ -198,7 +197,7 @@ const PageNumberBUtton = styled(Link)`
   font-weight: 400;
   font-size: 18px;
   text-decoration: none;
-  color: ${p => p.theme.colors.primary};
+  color: ${(p) => p.theme.colors.primary};
   ${paginationItemMixin}
 
   &:hover,
@@ -212,18 +211,18 @@ const Spacer = styled.span`
   opacity: 0.3;
   ${paginationItemMixin}
   &::before {
-    content: "...";
+    content: '...';
   }
 `;
 
 const MobileReference = styled.span`
   font-weight: 400;
   ${paginationItemMixin}
-  color: ${p => p.theme.colors.primary};
+  color: ${(p) => p.theme.colors.primary};
 
   em {
     font-style: normal;
-    color: ${p => p.theme.colors.primary};
+    color: ${(p) => p.theme.colors.primary};
   }
 `;
 

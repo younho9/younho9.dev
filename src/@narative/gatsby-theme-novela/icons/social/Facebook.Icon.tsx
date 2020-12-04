@@ -1,15 +1,14 @@
-import React from "react";
+import React from 'react';
 
 import { Icon } from '@types';
 
-const FacebookIcon: Icon = ({ fill = "white" }) => (
+const FacebookIcon: Icon = ({ fill = 'white' }) => (
   <svg
     width="7"
     height="14"
     viewBox="0 0 7 14"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
       clipRule="evenodd"

@@ -1,4 +1,4 @@
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 
 export const globalStyles = css`
   /**
@@ -15,7 +15,8 @@ export const globalStyles = css`
   }
 
   @font-face {
-    font-family: "Source Sans Pro", "APPLE SD Gothic Neo", HelveticaNeue, Helvetica, "NanumGothic", "맑은 고딕", "Malgun Gothic", arial, sans-serif;
+    font-family: 'Source Sans Pro', 'APPLE SD Gothic Neo', HelveticaNeue,
+      Helvetica, 'NanumGothic', '맑은 고딕', 'Malgun Gothic', arial, sans-serif;
     font-weight: 400;
     font-style: normal;
   }
@@ -42,7 +43,8 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "Source Sans Pro", "APPLE SD Gothic Neo", HelveticaNeue, Helvetica, "NanumGothic", "맑은 고딕", "Malgun Gothic", arial, sans-serif;
+    font-family: 'Source Sans Pro', 'APPLE SD Gothic Neo', HelveticaNeue,
+      Helvetica, 'NanumGothic', '맑은 고딕', 'Malgun Gothic', arial, sans-serif;
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;
@@ -77,7 +79,8 @@ export const globalStyles = css`
   textarea,
   select,
   button {
-    font-family: "Source Sans Pro", "APPLE SD Gothic Neo", HelveticaNeue, Helvetica, "NanumGothic", "맑은 고딕", "Malgun Gothic", arial, sans-serif;
+    font-family: 'Source Sans Pro', 'APPLE SD Gothic Neo', HelveticaNeue,
+      Helvetica, 'NanumGothic', '맑은 고딕', 'Malgun Gothic', arial, sans-serif;
   }
 
   .underline {
@@ -128,7 +131,7 @@ export const globalStyles = css`
       outline: none;
     }
 
-    &[type="number"] {
+    &[type='number'] {
       width: auto;
     }
   }

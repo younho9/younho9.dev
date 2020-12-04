@@ -1,11 +1,11 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const Anchor = styled.a`
-  transition: ${p => p.theme.colorModeTransition};
-  color: ${p => p.theme.colors.accent};
+  transition: ${(p) => p.theme.colorModeTransition};
+  color: ${(p) => p.theme.colors.accent};
 
   &:visited {
-    color: ${p => p.theme.colors.accent};
+    color: ${(p) => p.theme.colors.accent};
     opacity: 0.85;
   }
 

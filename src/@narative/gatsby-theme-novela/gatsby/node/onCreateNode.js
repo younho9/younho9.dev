@@ -26,7 +26,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       slug,
     };
 
-    const permalink = articlePermalinkFormat.replace(/(:[a-z_]+)/g, match => {
+    const permalink = articlePermalinkFormat.replace(/(:[a-z_]+)/g, (match) => {
       const key = match.substr(1);
       if (permalinkData.hasOwnProperty(key)) {
         return permalinkData[key];
@@ -88,8 +88,8 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
         basePath,
         generateArticlePermalink(
           slugify(node.frontmatter.slug || node.frontmatter.title),
-          node.frontmatter.date,
-        ),
+          node.frontmatter.date
+        )
       ),
       title: node.frontmatter.title,
       subscription: node.frontmatter.subscription !== false,

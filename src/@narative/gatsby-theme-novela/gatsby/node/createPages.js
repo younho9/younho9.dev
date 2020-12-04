@@ -39,7 +39,7 @@ function slugify(string, base) {
 }
 
 function getUniqueListBy(array, key) {
-  return [...new Map(array.map(item => [item[key], item])).values()];
+  return [...new Map(array.map((item) => [item[key], item])).values()];
 }
 
 const byDate = (a, b) => new Date(b.dateForSEO) - new Date(a.dateForSEO);
@@ -96,11 +96,11 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       const localArticles = await graphql(query.local.articles);
 
       dataSources.local.authors = localAuthors.data.authors.edges.map(
-        normalize.local.authors,
+        normalize.local.authors
       );
 
       dataSources.local.articles = localArticles.data.articles.edges.map(
-        normalize.local.articles,
+        normalize.local.articles
       );
     } catch (error) {
       console.error(error);
@@ -114,11 +114,11 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       const contentfulArticles = await graphql(query.contentful.articles);
 
       dataSources.contentful.authors = contentfulAuthors.data.authors.edges.map(
-        normalize.contentful.authors,
+        normalize.contentful.authors
       );
 
       dataSources.contentful.articles = contentfulArticles.data.articles.edges.map(
-        normalize.contentful.articles,
+        normalize.contentful.articles
       );
     } catch (error) {
       console.error(error);
@@ -132,7 +132,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     ...dataSources.netlify.articles,
   ].sort(byDate);
 
-  const articlesThatArentSecret = articles.filter(article => !article.secret);
+  const articlesThatArentSecret = articles.filter((article) => !article.secret);
 
   // Combining together all the authors from different sources
   authors = getUniqueListBy(
@@ -141,7 +141,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       ...dataSources.contentful.authors,
       ...dataSources.netlify.authors,
     ],
-    'name',
+    'name'
   );
 
   if (articles.length === 0 || authors.length === 0) {
@@ -185,12 +185,12 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     // Match the Author to the one specified in the article
     let authorsThatWroteTheArticle;
     try {
-      authorsThatWroteTheArticle = authors.filter(author => {
+      authorsThatWroteTheArticle = authors.filter((author) => {
         const allAuthors = article.author
           .split(',')
-          .map(a => a.trim().toLowerCase());
+          .map((a) => a.trim().toLowerCase());
 
-        return allAuthors.some(a => a === author.name.toLowerCase());
+        return allAuthors.some((a) => a === author.name.toLowerCase());
       });
     } catch (error) {
       throw new Error(`
@@ -239,10 +239,10 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   if (authorsPage) {
     log('Creating', 'authors page');
 
-    authors.forEach(author => {
+    authors.forEach((author) => {
       const articlesTheAuthorHasWritten = articlesThatArentSecret.filter(
-        article =>
-          article.author.toLowerCase().includes(author.name.toLowerCase()),
+        (article) =>
+          article.author.toLowerCase().includes(author.name.toLowerCase())
       );
       const path = slugify(author.slug, authorsPath);
 

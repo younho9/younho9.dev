@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import styled from "@emotion/styled";
-import throttle from "lodash/throttle";
+import React, { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
+import throttle from 'lodash/throttle';
 
-import { clamp } from "@utils";
+import { clamp } from '@utils';
 
 export interface IProgress {
   contentHeight: number;
@@ -19,11 +19,11 @@ const Progress: React.FC<IProgress> = ({ contentHeight }) => {
     }, 20);
 
     if (contentHeight) {
-      window.addEventListener("scroll", handleScroll);
-      window.addEventListener("resize", handleScroll);
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll);
       return () => {
-        window.removeEventListener("scroll", handleScroll);
-        window.removeEventListener("resize", handleScroll);
+        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('resize', handleScroll);
       };
     }
   }, [contentHeight]);
@@ -52,7 +52,7 @@ const Trackline = styled.div`
   height: calc(88vh - 40px);
   max-height: 425px;
   width: 1px;
-  background-color: ${p => p.theme.colors.track};
+  background-color: ${(p) => p.theme.colors.track};
   opacity: 0.6;
   overflow: hidden;
 `;
@@ -62,6 +62,6 @@ const ProgressLine = styled.div`
   height: 100%;
   top: -100%;
   width: 1px;
-  background-color: ${p => p.theme.colors.progress};
+  background-color: ${(p) => p.theme.colors.progress};
   left: 0;
 `;

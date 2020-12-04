@@ -80,7 +80,7 @@ const SEO: React.FC<HelmetProps> = ({
 }) => {
   const results = useStaticQuery(seoQuery);
   const site = results.allSite.edges[0].node.siteMetadata;
-  const twitter = site.social.find(option => option.name === 'twitter') || {};
+  const twitter = site.social.find((option) => option.name === 'twitter') || {};
 
   const fullURL = (path: string) =>
     path ? `${site.siteUrl}${path}` : site.siteUrl;
@@ -139,8 +139,7 @@ const SEO: React.FC<HelmetProps> = ({
       title={title || site.title}
       htmlAttributes={{ lang: 'en' }}
       script={themeUIDarkModeWorkaroundScript}
-      meta={metaTags}
-    >
+      meta={metaTags}>
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       {children}
     </Helmet>

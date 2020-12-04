@@ -31,13 +31,13 @@ const Layout: React.FC<{}> = ({ children }) => {
       </Container>
     </ArticlesContextProvider>
   );
-}
+};
 
 export default Layout;
 
 const Container = styled.div`
   position: relative;
-  background: ${p => p.theme.colors.background};
-  transition: ${p => p.theme.colorModeTransition};
+  background: ${(p) => p.theme.colors.background};
+  transition: ${(p) => p.theme.colorModeTransition};
   min-height: 100vh;
 `;

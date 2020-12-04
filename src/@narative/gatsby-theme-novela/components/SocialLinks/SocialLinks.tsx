@@ -32,7 +32,7 @@ const icons = {
   tripadvisor: Icons.TripAdvisor,
 };
 
-const getHostname = url => {
+const getHostname = (url) => {
   return new URL(url.toLowerCase()).hostname.replace('www.', '').split('.')[0];
 };
 
@@ -44,12 +44,12 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
 
   return (
     <>
-      {links.map(option => {
+      {links.map((option) => {
         const name = option.name || getHostname(option.url);
         const Icon = icons[name];
         if (!Icon) {
           throw new Error(
-            `unsupported social link name=${name} / url=${option.url}`,
+            `unsupported social link name=${name} / url=${option.url}`
           );
         }
         return (
@@ -59,8 +59,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
             rel="noopener nofollow"
             data-a11y="false"
             aria-label={`Link to ${option.url}`}
-            href={option.url}
-          >
+            href={option.url}>
             <Icon fill={fill} />
             <Hidden>Link to ${option.url}</Hidden>
           </SocialIconContainer>
@@ -81,7 +80,7 @@ const SocialIconContainer = styled.a`
   &:hover {
     svg {
       &:hover * {
-        fill: ${p => p.theme.colors.primary};
+        fill: ${(p) => p.theme.colors.primary};
       }
       * {
         transition: fill 0.25s var(--ease-in-out-quad);
@@ -104,7 +103,7 @@ const SocialIconContainer = styled.a`
     top: -20%;
     width: 200%;
     height: 160%;
-    border: 2px solid ${p => p.theme.colors.accent};
+    border: 2px solid ${(p) => p.theme.colors.accent};
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }

@@ -1,9 +1,9 @@
 // helper that grabs the mdx resolver when given a string fieldname
-const mdxResolverPassthrough = fieldName => async (
+const mdxResolverPassthrough = (fieldName) => async (
   source,
   arguments_,
   context,
-  info,
+  info
 ) => {
   const type = info.schema.getType(`Mdx`);
   const mdxNode = context.nodeModel.getNodeById({

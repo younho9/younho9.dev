@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface IPaginator {
   pageCount: number;
@@ -68,8 +68,8 @@ export interface IProgress {
 }
 
 export type Icon = React.FC<{
-  fill: string
-}>
+  fill: string;
+}>;
 
 export type Template = React.FC<{
   pageContext: {
@@ -79,4 +79,4 @@ export type Template = React.FC<{
     next: IArticle[];
   };
   location: Location;
-}>
+}>;

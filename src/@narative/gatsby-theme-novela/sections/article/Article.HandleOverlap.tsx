@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import styled from "@emotion/styled";
-import throttle from "lodash/throttle";
+import React, { useEffect, useRef, useState } from 'react';
+import styled from '@emotion/styled';
+import throttle from 'lodash/throttle';
 
 /**
  * <HandleOverlap />
@@ -44,38 +44,36 @@ const HandleOverlap: React.FC<{}> = (props) => {
   useEffect(() => {
     const handleScroll = throttle(() => {
       // Elements we want to include for the overlap
-      const ctas = Array.from(document.getElementsByClassName("CallToAction"));
-      const images = Array.from(document.querySelectorAll("img"));
+      const ctas = Array.from(document.getElementsByClassName('CallToAction'));
+      const images = Array.from(document.querySelectorAll('img'));
 
       const nodesToNotOverlap = [...ctas, ...images];
       const noNodesAreVisible = !nodesToNotOverlap.some(isVisible);
 
-      nodesToNotOverlap.forEach(
-        (node: HTMLElement): void | null => {
-          const isOverlapping = collide(asideRef.current, node);
+      nodesToNotOverlap.forEach((node: HTMLElement): void | null => {
+        const isOverlapping = collide(asideRef.current, node);
 
-          if (noNodesAreVisible) {
-            return setIsOverlapping(isOverlapping);
-          }
-          /**
-           * If the node is not in the viewport don't fire state events for it,
-           * otherwise we run into issues with multiple nodes on the page.
-           */
-          if (!isVisible(node)) {
-            return null;
-          }
+        if (noNodesAreVisible) {
+          return setIsOverlapping(isOverlapping);
+        }
+        /**
+         * If the node is not in the viewport don't fire state events for it,
+         * otherwise we run into issues with multiple nodes on the page.
+         */
+        if (!isVisible(node)) {
+          return null;
+        }
 
-          setIsOverlapping(isOverlapping);
-        },
-      );
+        setIsOverlapping(isOverlapping);
+      });
     }, 20);
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
   }, [asideRef]);
 
@@ -84,13 +82,13 @@ const HandleOverlap: React.FC<{}> = (props) => {
       {props.children}
     </OverlapContainer>
   );
-}
+};
 
 export default HandleOverlap;
 
 const OverlapContainer = styled.div<{ isOverlapping: boolean }>`
-  user-select: ${p => (p.isOverlapping ? "none" : "initial")};
-  pointer-events: ${p => (p.isOverlapping ? "none" : "initial")};
-  opacity: ${p => (p.isOverlapping ? 0 : 1)};
-  transition: ${p => (p.isOverlapping ? "opacity 0.25s" : "opacity 0.25s")};
+  user-select: ${(p) => (p.isOverlapping ? 'none' : 'initial')};
+  pointer-events: ${(p) => (p.isOverlapping ? 'none' : 'initial')};
+  opacity: ${(p) => (p.isOverlapping ? 0 : 1)};
+  transition: ${(p) => (p.isOverlapping ? 'opacity 0.25s' : 'opacity 0.25s')};
 `;
