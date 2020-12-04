@@ -3,6 +3,7 @@ title: 2020년 회고
 author: younho9
 date: 2020-12-04
 hero: ./images/hero.jpeg
+slug: 2020-retrospective
 excerpt: 올해는 프론트엔드 공부를 시작하고, 우아한테크캠프와 이어진 취업 연계를 통한 면접들을 경험하면서 많이 성장했고, 장벽을 느끼기도 했던 한 해였다. 나는 올해를 어떻게 보냈는지 3가지 포인트로 되돌아보기로 한다.
 ---
 
