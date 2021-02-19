@@ -43,7 +43,7 @@ excerpt: 깃헙, 페이스북, 트위터, 유튜브, 미디움 등에서 매일�
 
 ## Websites
 
-- [Product Hunt - Web App](https://www.producthunt.com/topics/web-app) : 웹 앱 프로덕트들을 소개해준다. 최신 웹 앱 트렌드를 파악하거나 유용한 도구들을 발견할 수 있다.  
+- [Product Hunt - Web App](https://www.producthunt.com/topics/web-app) : 웹 앱 프로덕트들을 소개해준다. 최신 웹 앱 트렌드를 파악하거나 유용한 도구들을 발견할 수 있다.
 
 - [Custom Shape Dividers](https://www.shapedivider.app/) : 랜딩페이지에 넣을만한 웨이브 svg를 생성해준다.
 
@@ -76,4 +76,3 @@ excerpt: 깃헙, 페이스북, 트위터, 유튜브, 미디움 등에서 매일�
 - [sudo: unable to resolve host 에러 해결](https://til.younho9.dev/log/2021/2021-01-13-210113)
 
 - [ssh를 이용하여 원격 서버와 양방향 파일 전송하기](https://til.younho9.dev/log/2021/2021-01-15-210115)
-

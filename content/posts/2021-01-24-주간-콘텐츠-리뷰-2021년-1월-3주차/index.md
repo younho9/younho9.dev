@@ -17,24 +17,24 @@ excerpt: Adobe Spectrum을 따라서 웹페이지를 개발하고 있는데, Sou
 
 - [CSS-TRICKS - Understanding Web Fonts and Getting the Most Out of Them](https://css-tricks.com/understanding-web-fonts-getting/) : 폰트 형식부터 임베드 방법, 호스팅 방법, 고급 기능, 추가 고려사항 등을 설명한다. Public 레포에 라이센스가 있는 폰트를 올리지 말라는 지침도 알게 되었다. (`.gitignore` 에 추가해야 한다.)
 
-   - [A COMPREHENSIVE GUIDE TO FONT LOADING STRATEGIES](https://www.zachleat.com/web/comprehensive-webfonts/) : 더 나가서 폰트 로딩 UX를 향상시키는 글도 소개하는데, 나중에 읽어봐야겠다.
+  - [A COMPREHENSIVE GUIDE TO FONT LOADING STRATEGIES](https://www.zachleat.com/web/comprehensive-webfonts/) : 더 나가서 폰트 로딩 UX를 향상시키는 글도 소개하는데, 나중에 읽어봐야겠다.
 
 - [웹 폰트 사용과 최적화의 최근 동향](https://d2.naver.com/helloworld/4969726) : 네이버 D2에서 2018년에 작성된 웹폰트에 대한 글. 특히 한글 폰트에 대한 고려해볼 수 있는 서브셋 폰트를 소개한 부분과 unicode-range 속성 부분이 좋았다.
 
 ### 디자인 시스템
 
 - [Introducing React Spectrum](https://medium.com/adobetech/introducing-react-spectrum-2f3dfab45906) : 어도비에서 만든 [React Spectrum](https://github.com/adobe/react-spectrum) 라이브러리에 대한 소개 블로그 글. Adobe-Spectrum이 어도비의 디자인 시스템이라면, React-Spectrum은 디자인 시스템의 리액트 구현체이고, 이는 리액트 훅으로 접근성을 따로 다루는 [React-Aria](https://react-spectrum.adobe.com/react-aria/index.html), 크로스 플랫폼을 다루는 [React-Stately](https://react-spectrum.adobe.com/react-stately/index.html)를 포함한다.
-[Material-UI](https://material-ui.com/)와 [Ant Design](https://ant.design/)이 웹 개발을 빠르고 쉽게 해주는 리액트 컴포넌트 라이브러리, 디자인 시스템이 주요 컨셉인 것과 달리 React-Spectrum은 주요 컨셉으로, 접근성, 크로스 플랫폼(적응성), 국제화까지를 목표로 한다는 점에서 차별점이 있다고 느껴졌고 어도비니까 가능하다고 느껴졌다.
+  [Material-UI](https://material-ui.com/)와 [Ant Design](https://ant.design/)이 웹 개발을 빠르고 쉽게 해주는 리액트 컴포넌트 라이브러리, 디자인 시스템이 주요 컨셉인 것과 달리 React-Spectrum은 주요 컨셉으로, 접근성, 크로스 플랫폼(적응성), 국제화까지를 목표로 한다는 점에서 차별점이 있다고 느껴졌고 어도비니까 가능하다고 느껴졌다.
 
-   ![2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-0](images/2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-0.png)
+  ![2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-0](images/2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-0.png)
 
-   ![2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-1](images/2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-1.png)
+  ![2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-1](images/2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-1.png)
 
-   ![2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-2](images/2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-2.png)
+  ![2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-2](images/2021-01-24-주간-콘텐츠-리뷰-2021년-1월-3주차-image-2.png)
 
 - [Naming Tokens in Design Systems](https://medium.com/eightshapes-llc/naming-tokens-in-design-systems-9e86c7444676) : 디자인 시스템에서의 네이밍에 대해 다룬 글.
 
-   - [Medium - Nathan Curtis](https://medium.com/@nathanacurtis) : 미디엄에 디자인 시스템 관련 양질의 글을 다량으로 작성해주셨다.
+  - [Medium - Nathan Curtis](https://medium.com/@nathanacurtis) : 미디엄에 디자인 시스템 관련 양질의 글을 다량으로 작성해주셨다.
 
 ### 개발하면서 참고한 자료
 
@@ -69,4 +69,3 @@ excerpt: Adobe Spectrum을 따라서 웹페이지를 개발하고 있는데, Sou
 - [입사/이작할 스타트업을 고르는 방법 - 취업편](https://www.youtube.com/watch?v=euxI9vljXw8&t=2s) : 구직자로써 스타트업을 고를 때 무슨 기준으로 고를 것인가를 샌드버드 CEO님이 설명해주신다.
 
 - [Why LocalStorage is Vulnerable to XSS](https://www.youtube.com/watch?v=M6N7gEZ-IUQ) : XSS 취약점이 있는 사이트에서, 로컬스토리지에 토큰을 저장한다면 생길 수 있는 XSS 공격 설명.
-
