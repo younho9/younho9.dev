@@ -94,7 +94,7 @@ const Article: Template = ({ pageContext, location }) => {
       <ArticleBody ref={contentSectionRef}>
         <MDXRenderer content={article.body}>
           <ArticleShare />
-          <ArticleUtterances repo="younho9/younho9.dev" />
+          <ArticleUtterances />
         </MDXRenderer>
       </ArticleBody>
       {mailchimp && article.subscription && <Subscription />}

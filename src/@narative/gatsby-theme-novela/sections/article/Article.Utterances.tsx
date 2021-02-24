@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import { cosh } from 'core-js/fn/math';
+import React, { useRef, useLayoutEffect } from 'react';
 import { useColorMode } from 'theme-ui';
 
 export interface IUtterancesProps {
@@ -7,45 +8,53 @@ export interface IUtterancesProps {
 
 const utterancesSelector = 'iframe.utterances-frame';
 
-const ArticleUtterances: React.FC<IUtterancesProps> = React.memo(({ repo }) => {
+const ArticleUtterances: React.FC<IUtterancesProps> = () => {
   const [colorMode] = useColorMode();
-  const isDark = colorMode === `dark`;
-  const utterancesTheme = isDark ? 'github-dark' : 'github-light';
+  const utterancesTheme = colorMode === `dark` ? 'github-dark' : 'github-light';
   const containerRef = useRef<HTMLDivElement>(null);
+  const utterancesEl = containerRef.current?.querySelector(
+    utterancesSelector
+  ) as HTMLIFrameElement | null;
 
-  useEffect(() => {
-    const utterancesEl = containerRef.current.querySelector(
-      utterancesSelector
-    ) as HTMLIFrameElement;
-
+  useLayoutEffect(() => {
     const createUtterancesEl = () => {
       const script = document.createElement('script');
 
-      script.src = 'https://utteranc.es/client.js';
-      script.setAttribute('repo', repo);
-      script.setAttribute('issue-term', 'pathname');
-      script.setAttribute('label', 'comment');
-      script.setAttribute('theme', utterancesTheme);
-      script.crossOrigin = 'anonymous';
-      script.async = true;
+      const attributes = {
+        src: 'https://utteranc.es/client.js',
+        repo: 'younho9/younho9.dev',
+        'issue-term': 'pathname',
+        label: 'comment',
+        theme: 'github-light',
+        crossOrigin: 'anonymous',
+        async: 'true',
+      };
+
+      Object.entries(attributes).forEach(([key, value]) => {
+        script.setAttribute(key, value);
+      });
 
       containerRef.current.appendChild(script);
     };
 
-    const postThemeMessage = () => {
-      const message = {
-        type: 'set-theme',
-        theme: utterancesTheme,
-      };
+    createUtterancesEl();
+  }, []);
 
-      utterancesEl.contentWindow.postMessage(message, 'https://utteranc.es');
+  useLayoutEffect(() => {
+    if (!utterancesEl) {
+      return;
+    }
+
+    const message = {
+      type: 'set-theme',
+      theme: utterancesTheme,
     };
 
-    utterancesEl ? postThemeMessage() : createUtterancesEl();
-  }, [repo, utterancesTheme]);
+    utterancesEl.contentWindow.postMessage(message, 'https://utteranc.es');
+  }, [utterancesEl, utterancesTheme]);
 
   return <div ref={containerRef} />;
-});
+};
 
 ArticleUtterances.displayName = 'Utterances';
 
