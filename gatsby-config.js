@@ -5,7 +5,7 @@ module.exports = {
     siteUrl: `https://younho9.dev`,
     description: `younho9의 기술 블로그, 웹 프론트엔드 개발 일지, 느려도 꾸준하게`,
     hero: {
-      heading: `💪 Hello. I'm younho9, <br> studying Web Development`,
+      heading: `👋 Hello. I'm younho9, <br> Studying Web Development`,
       maxWidth: 652,
     },
     social: [
