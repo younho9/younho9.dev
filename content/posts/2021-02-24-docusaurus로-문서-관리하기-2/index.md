@@ -356,13 +356,7 @@ Docusaurus는 `useThemeContext` 라는 훅을 제공하여 현재 테마를 가�
 
 그리고 `utterancesTheme` 변수가 변경된다면, 기존에 마운트되어 있는 Utterances iframe을 찾아서, `postMessage` 로 테마 변경을 전달한다.
 
-<div class="Image__Small">
-  <img
-    src="./images/2021-02-24-docusaurus로-문서-관리하기-2-image-8.gif"
-    alt="다크모드 Toggle 적용"
-  />
-  <figcaption>다크모드 Toggle 적용</figcaption>
-</div>
+![2021-02-24-docusaurus로-문서-관리하기-2-image-8](./images/2021-02-24-docusaurus로-문서-관리하기-2-image-8.gif)
 
 ## Algolia 검색 연결하기
 
