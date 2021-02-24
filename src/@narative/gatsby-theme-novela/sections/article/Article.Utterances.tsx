@@ -1,33 +1,48 @@
-import React, { createRef, useLayoutEffect } from 'react';
-
-const src = 'https://utteranc.es/client.js';
+import React, { useRef, useEffect } from 'react';
+import { useColorMode } from 'theme-ui';
 
 export interface IUtterancesProps {
   repo: string;
 }
 
+const utterancesSelector = 'iframe.utterances-frame';
+
 const ArticleUtterances: React.FC<IUtterancesProps> = React.memo(({ repo }) => {
-  const containerRef = createRef<HTMLDivElement>();
+  const [colorMode] = useColorMode();
+  const isDark = colorMode === `dark`;
+  const utterancesTheme = isDark ? 'github-dark' : 'github-light';
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    const utterances = document.createElement('script');
+  useEffect(() => {
+    const utterancesEl = containerRef.current.querySelector(
+      utterancesSelector
+    ) as HTMLIFrameElement;
 
-    const attributes = {
-      src,
-      repo,
-      'issue-term': 'pathname',
-      label: 'comment',
-      theme: 'github-light',
-      crossOrigin: 'anonymous',
-      async: 'true',
+    const createUtterancesEl = () => {
+      const script = document.createElement('script');
+
+      script.src = 'https://utteranc.es/client.js';
+      script.setAttribute('repo', repo);
+      script.setAttribute('issue-term', 'pathname');
+      script.setAttribute('label', 'comment');
+      script.setAttribute('theme', utterancesTheme);
+      script.crossOrigin = 'anonymous';
+      script.async = true;
+
+      containerRef.current.appendChild(script);
     };
 
-    Object.entries(attributes).forEach(([key, value]) => {
-      utterances.setAttribute(key, value);
-    });
+    const postThemeMessage = () => {
+      const message = {
+        type: 'set-theme',
+        theme: utterancesTheme,
+      };
 
-    containerRef.current.appendChild(utterances);
-  }, [repo]);
+      utterancesEl.contentWindow.postMessage(message, 'https://utteranc.es');
+    };
+
+    utterancesEl ? postThemeMessage() : createUtterancesEl();
+  }, [repo, utterancesTheme]);
 
   return <div ref={containerRef} />;
 });
