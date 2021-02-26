@@ -1,0 +1,14 @@
+{
+  "exportConfig": {
+    "recursiveExport": true,
+    "createPageDirectory": true,
+    "addMetadata": true,
+    "appendCreatedTime": true,
+    "generateSlug": true
+  },
+  "databaseConfig": {
+    "statusColumnName": "Status",
+    "currentStatus": "✅ Completed",
+    "nextStatus": "🖨 Published"
+  }
+}
