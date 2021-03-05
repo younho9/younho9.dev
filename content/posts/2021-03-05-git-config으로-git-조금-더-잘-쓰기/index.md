@@ -103,7 +103,13 @@ git config --global core.editor "code --wait"
 
 이제 `git commit` 명령어를 사용하면 VS Code를 사용해 커밋 메시지를 작성할 수 있다.
 
-![2021-03-05-git-config으로-git-조금-더-잘-쓰기-image-4](./images/2021-03-05-git-config으로-git-조금-더-잘-쓰기-image-4.png)
+<div class="Image__Small">
+  <img
+    src="./images/2021-03-05-git-config으로-git-조금-더-잘-쓰기-image-4.png"
+    alt="VS Code 내장 터미널에서 git commit 명령어를 사용했을 때, VS Code 에디터에 창이 나타난 모습"
+  />
+  <figcaption>VS Code 내장 터미널에서 git commit 명령어를 사용했을 때, VS Code 에디터에 창이 나타난 모습</figcaption>
+</div>
 
 ## git commit template
 
@@ -154,7 +160,13 @@ git config --global core.editor "code --wait"
 git config --global commit.template ~/.gitmessage.txt
 ```
 
-![2021-03-05-git-config으로-git-조금-더-잘-쓰기-image-5](./images/2021-03-05-git-config으로-git-조금-더-잘-쓰기-image-5.png)
+<div class="Image__Small">
+  <img
+    src="./images/2021-03-05-git-config으로-git-조금-더-잘-쓰기-image-5.png"
+    alt="git commit 명령어 실행시 나타나는 창"
+  />
+  <figcaption>git commit 명령어 실행시 나타나는 창</figcaption>
+</div>
 
 ## git pull rebase
 
@@ -231,16 +243,16 @@ git config --global core.excludesfile ~/.gitignore_global
 
 ## 참고자료
 
-[How to upgrade Git to latest version on macOS?](https://stackoverflow.com/questions/8957862/how-to-upgrade-git-to-latest-version-on-macos)
+- [How to upgrade Git to latest version on macOS?](https://stackoverflow.com/questions/8957862/how-to-upgrade-git-to-latest-version-on-macos)
 
-[Git commit message template 만들기](https://ujuc.github.io/2020/02/02/git-commit-message-template-man-deul-gi/)
+- [Git commit message template 만들기](https://ujuc.github.io/2020/02/02/git-commit-message-template-man-deul-gi/)
 
-[좋은 커밋 메시지를 작성하기 위한 커밋 템플릿 만들어보기](https://junwoo45.github.io/2020-02-06-commit_template/)
+- [좋은 커밋 메시지를 작성하기 위한 커밋 템플릿 만들어보기](https://junwoo45.github.io/2020-02-06-commit_template/)
 
-[Git - git-pull Documentation](https://git-scm.com/docs/git-pull)
+- [Git - git-pull Documentation](https://git-scm.com/docs/git-pull)
 
-[[GIT] Git pull 전략 (default, --ff -only, --rebase)](https://sanghye.tistory.com/43)
+- [[GIT] Git pull 전략 (default, --ff -only, --rebase)](https://sanghye.tistory.com/43)
 
-[GitHub 환경에서의 실전 Git 레시피 : NHN Cloud Meetup](https://meetup.toast.com/posts/116)
+- [GitHub 환경에서의 실전 Git 레시피 : NHN Cloud Meetup](https://meetup.toast.com/posts/116)
 
-[Don't put .idea and .vscode directories to project's .gitignore](https://blog.martinhujer.cz/dont-put-idea-vscode-directories-to-projects-gitignore/)
+- [Don't put .idea and .vscode directories to project's .gitignore](https://blog.martinhujer.cz/dont-put-idea-vscode-directories-to-projects-gitignore/)
