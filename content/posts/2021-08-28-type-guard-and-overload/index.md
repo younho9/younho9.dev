@@ -13,7 +13,7 @@ excerpt: 타입스크립트를 사용하다보면, 타입 가드 함수를 사�
 - 중복되는 타입 가드 함수에 오버로드를 사용해보자.
 - 오버로드가 있는 함수는 타입 추론 시 적용 가능한 첫 번째 시그니쳐가 선택된다.
 - 오버로드 시그니쳐을 작성할 때는 순서가 중요하다. 구체적 타입 > 일반적 타입 순서로 작성한다.
-- 타입 가드 함수 자체를 인자로 사용할 때(ex. `Array.filter`) 컴파일러의 함수 추론에 문제가 있는 경우, 명시적으로 타입 인자를 넘겨 사용한다.
+- 타입 가드 함수 자체를 인자로 사용할 때(ex. `Array.prototype.filter`) 컴파일러의 함수 추론에 문제가 있는 경우, 명시적으로 타입 인자를 넘겨 사용한다.
 
 ## Intro
 
@@ -284,9 +284,16 @@ function getCoffeeBean(value: DrinkDetailInfo): string | null {
 
 함수 오버로딩에서 오버로드 시그니쳐의 순서는 중요하다.
 
-적용 가능한 첫 번째 오버로드 시그니쳐가 선택되기 때문에, 조건부 타입을 작성할 때 처럼, 보다 [구체적인 서명을 먼저 배치](https://github.com/microsoft/TypeScript/issues/1860#issuecomment-72154737)해야 한다.
+적용 가능한 첫 번째 오버로드 시그니쳐가 선택되기 때문에, 조건부 타입을 작성할 때 처럼, 보다 구체적인 서명을 먼저 배치해야 한다.
 
-그리고 `Array.filter`에서 오버로드 함수 자체가 인자로 사용될 때는 올바른 오버로드 시그니쳐를 추론하지 못하는 문제가 있었다.
+[참고: Function Overloads > ordering](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#ordering)
+
+그리고, 오버로드가 있는 함수의 구현 시그니쳐는 `.d.ts` 파일에 생성되지 않는다.
+
+![2021-08-28-type-guard-and-overload-image-2](./images/2021-08-28-type-guard-and-overload-image-2.png)
+![2021-08-28-type-guard-and-overload-image-3](./images/2021-08-28-type-guard-and-overload-image-3.png)
+
+마지막으로, `Array.prototype.filter`에서 사용될 때와 같이, 오버로드 함수 자체가 인자로 사용될 때 올바른 오버로드 시그니쳐를 추론하지 못하는 문제가 있었다.
 
 ```typescript
 // 시그니쳐 (1)
@@ -308,7 +315,7 @@ drinkDetailInfos.filter(isCoffee).map((value) => value.coffeeBean);
 
 > `시그니쳐 (1)`과 `시그니쳐 (2)`의 순서가 바뀔 때마다, 에러의 위치가 달라진다.
 
-이런 케이스에서는 올바른 유형을 추론하기 위해 타입스크립트 컴파일러의 추론에 의존할 수 없는 경우이므로, `Array.filter`에 명시적으로 타입 인자를 넘겨주는 것으로 사용할 수 있다.
+이런 케이스처럼 아직 올바른 유형을 추론하기 위해 타입스크립트 컴파일러의 추론에 의존할 수 없는 경우가 있다. 이런 경우에는 `Array.prototype.filter`에 명시적으로 타입 인자를 넘겨주는 것으로 사용할 수 있다.
 
 ```typescript
 declare const drinkInfos: DrinkInfo[];
