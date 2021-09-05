@@ -8,12 +8,20 @@ author: younho9
 excerpt: 타입스크립트를 사용하다보면, 타입 가드 함수를 사용해서 타입의 범위를 좁혀야 하는 경우가 생긴다. 그런데, 타입 가드 함수를 하나 둘씩 추가하다 보니, 같은 기능의 함수가 중복되어 생성되는 경우가 있었다.
 ---
 
+## 변경사항
+
+### 2021년 9월 5일 업데이트
+
+- 오버로드 함수가 인자로 사용될 때 추론이 정확하지 않은 문제 부분이 추가되었습니다.
+- 제네릭과 인터섹션 활용 방법이 추가되었습니다.
+
 ## TL;DR
 
 - 중복되는 타입 가드 함수에 오버로드를 사용해보자.
 - 오버로드가 있는 함수는 타입 추론 시 적용 가능한 첫 번째 시그니쳐가 선택된다.
 - 오버로드 시그니쳐을 작성할 때는 순서가 중요하다. 구체적 타입 > 일반적 타입 순서로 작성한다.
 - 타입 가드 함수 자체를 인자로 사용할 때(ex. `Array.prototype.filter`) 컴파일러의 함수 추론에 문제가 있는 경우, 명시적으로 타입 인자를 넘겨 사용한다.
+- 오버로드를 사용하지 않고, 제네릭과 인터섹션 활용하는 방법으로 쉽게 해결할 수 있는 경우도 있다.
 
 ## Intro
 
@@ -328,6 +336,42 @@ drinkDetailInfos
 ```
 
 [Playground Link](https://www.typescriptlang.org/play?ts=4.4.2#code/JYOwLgpgTgZghgYwgAgMIHsYwig3gKGWTAE8AHCALmQHIFNsIaBufAX331ElkRQyw4AkiBjpkEAB6QQAEwDOaBjmQEiZKMCTUQAVwC2AI2isiCOINBVkeoyfadu0eEiWCIAEQhg4wADYiYhLSEHKKAoyB4mrI9O4AQhBwINTyYJogAOasHFzgznzIAIKyeITE5NY0cKUsDnk8LiglEFHBMgrFparlGlrWtsZQpsjyuplwUDoGQzmO+byuLV4+-m1SHYotbTEwULrAYKnpoNn1pBTIHhkA1sgAvG6MyAA+XRCsFyjXoDdtjxFhKJxG9tsDPpUrrcVr4AsCHk8cDC1vDQaVkXCxKx8AB6HHIQA7Q4AP2sAE02ABZnkAAKACMAEp8DBdCAEGBgOgQMhgPJARBKQA3OB+XTWH4gG4YqK06gCoUoLmIzzeWFRVh4wmkimUgBM9MZzNZ7M53OUvJlwuoor+wKlyDNcvCJpVDKZLLZHK5PP5gvNUN+NrtRoVPSIUG8uigHLtADovg97o86Ca6rlSgg-JMUPQQGlkLJblF5Bb88CANoAXVx+OJ5KpdMALuPIQAlLYAF0eQgBox5CAGVbkM3ADftgAAa5CAHB7ALsDgAtVqP4PO-AtRmD+HiUj0m2lR-RwMiUr2y2kPAB8tu9ECj5ksIAg9KnEDTGdi7Jz07FEuBhd9T6VKLE5cr6pr2tpg4tu2XY9gOw7jpOj7ih+mLoPIc4LtAS7Gu4q7rpu27Cru9wHtGcSMIkySXmqgAkY4AIT2ADodgA7Lb+ZKAD6dyCACG9gA1nYAEauACLjIF9uBgAaq4AA5PIIAUqOADLjk56q6hrLu4USYSKxZiP6R6BjyOzlKGYDhpGR4xpC8YJvhODJpwUGzvOfiLlJkTWmuG5bna2G4dpp7YFYl7iQa7ooYwz5iLJRa-D56CKbKykmoFwbIOpmmHrKOmXHptAGUwcxTtCMGmYhUDITygVobZskOTFwoniahEgMR+KAKFdBKAIATyCAAMLgCh48ggAe44ACePIIAIBOADdNqUzi+5QIeZ0AADwqcCe7ZSug3oXZR6FXhFgueetLYlBgXyINZk8GNYXpRNU2oTN+X2fuRXHklZWrUAA)
+
+## 오버로드 함수가 인자로 사용될 때 추론이 정확하지 않은 문제
+
+위의 상황에 대해 타입스크립트에 [이슈](https://github.com/microsoft/TypeScript/issues/45634)를 남기고 답변받았다.
+
+답변에 따르면 타입스크립트는 **오버로드 함수의 마지막 오버로드 시그니쳐**에 대해서만 추론한다.
+
+`filter` 함수의 타입은 다음과 같다.
+
+```ts
+filter<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[];
+```
+
+따라서, 처음에는 마지막 오버로드 시그니쳐인 `function isCoffee(value: DrinkInfo): value is CoffeeInfo;`를 `predicate`의 타입으로 추론하지만, `CoffeeInfo`가 `DrinkDetailInfo`에 할당되지 않기 때문에, fallback으로서 원본 배열인 `DrinkDetailInfo`를 `S`의 타입으로 추론하게 된다.
+
+```ts
+declare const drinkDetailInfos: DrinkDetailInfo[];
+// value: DrinkDetailInfo
+drinkDetailInfos.filter(isCoffee).map((value) => value.coffeeBean);
+```
+
+## 제네릭과 인터섹션 활용
+
+또한, 현재 예시와 같은 서로소 집합 타입(discrimination union)일 때는, 굳이 오버로드를 사용하지 않고, 제네릭과 인터섹션을 활용하는 방법 있었다.
+
+```ts
+function isCoffee<T extends Drink>(value: T): value is T & { type: 'coffee' } {
+  return value.type === 'coffee';
+}
+```
+
+이렇게 제네릭에 인터섹션을 추가하는 것으로, 가드된 타입은 `{ type: 'coffee' }`를 갖고 있기 때문에 커피임을 구분할 수 있게 된다.
+
+이 방법을 사용하면, 조건부 타입이나 오버로드 함수까지 사용할 필요 없이, 첫 번째 접근 방법에서 아주 쉽게 해결할 수 있게 된다.
+
+[Playground Link](https://www.typescriptlang.org/play?ts=4.4.2#code/JYOwLgpgTgZghgYwgAgMIHsYwig3gKGWTAE8AHCALmQHIFNsIaBufAX331ElkRQyw4AkiBjpkEAB6QQAEwDOaBjmQEiZKMCTUQAVwC2AI2isiCOINBVkeoyfadu0eEiWCIAEQhg4wADYiYhLSEHKKAoyB4mrI9O4AQhBwINTyYJogAOasHFzgznzIAIKyeITE5NY0cKUsDnk8LiglEFHBMgrFparlGlrWtsZQpsjyuplwUDoGQzmO+byuLV4+-m1SHYotbTEwULrAYKnpoNn1pBTIHhkA1sgAvG6MyAA+XRCsFyjXoDdtjxFhKJxG9tsDPpUrrcVr4AsCHk8cDC1vDQaVkXCxKx8DBdCAEGBgOgQMhgPJARAADwAFXaoU6PxANwAfAAKABucD8ums1IAlNROdyUGTkLSAGSqCoUah0ZRMZBsHpEKDeXRQElCnkAOi+D3ujzl7jquVx+MJxOQmW8qAs2CsHK5POojL+wIFNhm0GVpJgyFZZIpjuFfL5PqIAHoI-6yJM4PpvNAw1rrBSouUVWqNcgU9rzJYQB9yrlM2B1SSAAxzHF4glEknWsAUxLJYPOqG-DFRD1pDKZV6evx+H3AP0B8nytsQUPh5BRmNxhM8ZNO1PyrvAjPIVVl7O5uKMFsgEYl7dZkl6IfV0oIPyTFD0EBpZCyW5ReQut-AgDaAF18K+vzvtqMD+Dw44Uny2r6HAZCslOYb3MyOarnmdoQFYfKcDed6qrExLPoBTIbmIH4dsR3iwlEf4AdClEoqRIFgdAEHylBMFwQhDzIfu8pHnyQA)
 
 ## 참고자료
 
