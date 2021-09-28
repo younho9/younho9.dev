@@ -13,6 +13,7 @@ excerpt: 프로젝트의 프리티어 설정을 일관되게 유지하자.
 - 프로젝트마다 프리티어 설정 파일을 개별적으로 만들다보면, 일관되게 관리하기 어려울 수 있다.
 - 설정 파일을 따로 만들어 배포하고 관리하자.
 - JSDoc을 사용하면 타입 지원을 받을 수 있다.
+- `.prettierignore`를 패키지에 포함시켜 프리티어를 적용하지 않을 파일 목록 또한 공유할 수 있다.
 
 ## Intro
 
@@ -114,9 +115,91 @@ npm install -D @username/prettier-config
 
 또한, 커밋 메시지를 잘 작성해두면, 특정 옵션에 대한 변경이 왜 필요했는지 맥락을 한 곳에서 관리하게 되기 때문에, 본인에게 도움이 될 뿐만 아니라, 팀끼리 공유할 때에도 도움이 될 수 있다.
 
+덤으로 프로젝트의 설정 파일 하나를 줄일 수 있는 효과가 있다.
+
+## .prettierignore
+
+아쉽게도 프리티어를 적용하지 않을 파일들을 `.gitignore`와 같은 문법으로 명시할 수 있는 [`.prettierignore`](https://prettier.io/docs/en/ignore.html#ignoring-files-prettierignore)를 `package.json`에 추가하는 기능은 아직 제공되지 않고 있다.
+
+https://github.com/prettier/prettier/issues/3460
+
+eslint 같은 경우는 `ignorePatterns`를 설정 파일에 포함시킬 수 있는 옵션이 있어서, `.eslintignore` 파일 없이도 설정 파일에서 eslint를 적용하지 않을 파일을 명시할 수 있는데, 프리티어에는 설정 파일에 `ignorePatterns`이 포함되기는 쉽지 않아 보인다.
+
+프로젝트 별로 `.prettierignore` 파일을 불필요하게 관리하지 않기 위한 한 가지 방법은, 공유한 설정 패키지에 `.prettierignore`를 포함시키는 것이다.
+
+```json
+// package.json
+{
+  "name": "@username/prettier-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "username",
+  "license": "ISC",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    ".prettierignore" // .prettierignore를 패키지에 포함할 files에 명시한다.
+  ],
+  "dependencies": {
+    "@types/prettier": "2.4.1"
+  },
+  "devDependencies": {
+    "prettier": "2.4.0"
+  },
+  "peerDependencies": {
+    "prettier": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
+```
+
+그리고 이를 사용하는 패키지에서는 CLI와 `format on save`에 대한 추가 설정이 필요하다.
+
+### CLI
+
+CLI 옵션의 [`--ignore-path`](https://prettier.io/docs/en/cli.html#--ignore-path)를 npm 스크립트에 적용한다.
+
+다음과 같이 등록하여 사용하면, 공유된 프리티어 설정의 `.prettierignore`를 사용하게 된다.
+
+```json
+// package.json
+"scripts": {
+  "format": "prettier --write . --ignore-path ./node_modules/@username/prettier-config/.prettierignore"
+}
+```
+
+[`husky`](https://github.com/typicode/husky)와 [`lint-staged`](https://github.com/okonet/lint-staged) 조합을 사용하는 경우에도 다음과 같이 설정 가능하기 때문에, CI나 커밋 훅으로 인한 원치 않는 포맷팅을 막을 수 있다.
+
+```json
+"lint-staged": {
+    "*": [
+      "prettier --write --ignore-path ./packages/prettier-config/.prettierignore"
+    ],
+}
+```
+
+### format on save
+
+에디터의 format on save 기능을 사용하고 있다면, 기본적으로 루트의 `.prettierignore`을 확인하기 때문에 별도의 설정이 필요하다.
+
+VSCode를 사용하는 경우 레포지토리의 `.vscode/settings.json`에 경로를 명시함으로, 공유한 설정의 `.prettierignore`를 활용할 수 있다.
+
+```json
+// .vscode/settings.json
+{
+  "prettier.ignorePath": "./node_modules/@username/prettier-config/.prettierignore"
+}
+```
+
 ## 예시
 
-https://github.com/younho9/lib/tree/main/packages/prettier-config
+- https://github.com/younho9/lib/tree/main/packages/prettier-config
+- [lint-staged](https://github.com/younho9/lib/blob/main/package.json#L42)
+- [.vscode/settings.json](https://github.com/younho9/lib/blob/main/.vscode/settings.json#L8)
 
 ## 참고자료
 
