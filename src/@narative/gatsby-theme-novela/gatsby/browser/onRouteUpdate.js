@@ -23,7 +23,7 @@ function handleAccessibilityFocus() {
   });
 }
 
-module.exports = ({ prevLocation }) => {
+module.exports = ({prevLocation}) => {
   handleAccessibilityFocus();
 
   if (prevLocation) {

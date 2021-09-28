@@ -1,5 +1,5 @@
-module.exports = ({ actions }) => {
-  const { createTypes } = actions;
+module.exports = ({actions}) => {
+  const {createTypes} = actions;
 
   const typeDefs = `
     type PluginOptions {

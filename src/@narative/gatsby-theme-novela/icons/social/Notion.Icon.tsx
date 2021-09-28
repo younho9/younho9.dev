@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { Icon } from '@types';
+import {Icon} from '@types';
 
-const NotionIcon: Icon = ({ fill = 'white' }) => (
+const NotionIcon: Icon = ({fill = 'white'}) => (
   <svg
     width="16"
     height="14"
     viewBox="0 0 16 14"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fill-rule="evenodd"
       clipRule="evenodd"

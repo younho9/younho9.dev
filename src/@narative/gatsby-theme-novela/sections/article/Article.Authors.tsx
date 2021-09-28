@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import styled from '@emotion/styled';
 import OutsideClickHandler from 'react-outside-click-handler';
-import { useColorMode } from 'theme-ui';
-import { Link } from 'gatsby';
+import {useColorMode} from 'theme-ui';
+import {Link} from 'gatsby';
 
 import Image from '@components/Image';
 import Icons from '@icons';
 import mediaqueries from '@styles/media';
-import { IAuthor } from '@types';
+import {IAuthor} from '@types';
 
 /**
  * When generating the author names we're also checking to see how long the
@@ -30,19 +30,19 @@ interface AuthorsProps {
   authors: IAuthor[];
 }
 
-const CoAuthors: React.FC<AuthorsProps> = ({ authors }) => {
+const CoAuthors: React.FC<AuthorsProps> = ({authors}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [colorMode] = useColorMode();
   const names = generateAuthorNames(authors);
 
   const fill = colorMode === 'dark' ? '#fff' : '#000';
-  const listWidth = { width: `${10 + authors.length * 15}px` };
+  const listWidth = {width: `${10 + authors.length * 15}px`};
 
   return (
     <CoAuthorsContainer onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}>
       <CoAuthorsList style={listWidth}>
         {authors.map((author, index) => (
-          <CoAuthorAvatar style={{ left: `${index * 15}px` }} key={author.name}>
+          <CoAuthorAvatar style={{left: `${index * 15}px`}} key={author.name}>
             <RoundedImage src={author.avatar.small} />
           </CoAuthorAvatar>
         ))}
@@ -62,7 +62,8 @@ const CoAuthors: React.FC<AuthorsProps> = ({ authors }) => {
               <CoAuthorsListItemOpen key={author.name}>
                 <AuthorLink
                   as={author.authorsPage ? Link : 'div'}
-                  to={author.slug}>
+                  to={author.slug}
+                >
                   <CoAuthorAvatarOpen>
                     <RoundedImage src={author.avatar.small} />
                   </CoAuthorAvatarOpen>
@@ -81,7 +82,7 @@ const CoAuthors: React.FC<AuthorsProps> = ({ authors }) => {
  * Novela supports multiple authors and therefore we need to ensure
  * we render the right UI when there are varying amount of authors.
  */
-const ArticleAuthors: React.FC<AuthorsProps> = ({ authors }) => {
+const ArticleAuthors: React.FC<AuthorsProps> = ({authors}) => {
   const hasCoAuthors = authors.length > 1;
 
   // Special dropdown UI for multiple authors
@@ -91,7 +92,8 @@ const ArticleAuthors: React.FC<AuthorsProps> = ({ authors }) => {
     return (
       <AuthorLink
         as={authors[0].authorsPage ? Link : 'div'}
-        to={authors[0].slug}>
+        to={authors[0].slug}
+      >
         <AuthorAvatar>
           <RoundedImage src={authors[0].avatar.small} />
         </AuthorAvatar>
@@ -257,7 +259,7 @@ const IconOpenContainer = styled.div`
   right: 21px;
 `;
 
-const CoAuthorsContainer = styled.div<{ isOpen: boolean }>`
+const CoAuthorsContainer = styled.div<{isOpen: boolean}>`
   position: relative;
   display: flex;
   align-items: center;

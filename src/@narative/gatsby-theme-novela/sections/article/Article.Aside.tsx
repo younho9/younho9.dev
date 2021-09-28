@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import styled from '@emotion/styled';
 import throttle from 'lodash/throttle';
 
 import HandleOverlap from './Article.HandleOverlap';
 
 import mediaqueries from '@styles/media';
-import { clamp } from '@utils';
+import {clamp} from '@utils';
 
 interface AsideProps {
   contentHeight: number;
@@ -26,7 +26,7 @@ interface AsideProps {
  *                  |  content  |
  *
  */
-const Aside: React.FC<AsideProps> = ({ contentHeight, children }) => {
+const Aside: React.FC<AsideProps> = ({contentHeight, children}) => {
   const progressRef = useRef<HTMLDivElement>(null);
 
   const [progress, setProgress] = useState<number>(0);
@@ -35,7 +35,7 @@ const Aside: React.FC<AsideProps> = ({ contentHeight, children }) => {
 
   const show = imageOffset && progress < 100;
   const childrenWithProps = React.Children.map(children, (child) =>
-    React.cloneElement(child, { show })
+    React.cloneElement(child, {show}),
   );
 
   useEffect(() => {
@@ -80,7 +80,8 @@ const Aside: React.FC<AsideProps> = ({ contentHeight, children }) => {
       <Align
         show={show}
         imageOffset={imageOffset}
-        shouldFixAside={shouldFixAside}>
+        shouldFixAside={shouldFixAside}
+      >
         <div ref={progressRef}>
           <HandleOverlap>{childrenWithProps}</HandleOverlap>
         </div>

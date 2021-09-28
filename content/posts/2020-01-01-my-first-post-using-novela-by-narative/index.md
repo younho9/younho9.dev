@@ -105,7 +105,7 @@ alert(s);
 
 ```jsx
 import React from 'react';
-import { ThemeProvider } from 'theme-ui';
+import {ThemeProvider} from 'theme-ui';
 import theme from './theme';
 
 export default (props) => (

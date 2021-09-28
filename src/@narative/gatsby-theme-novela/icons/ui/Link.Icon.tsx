@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { Icon } from '@types';
+import {Icon} from '@types';
 
-const LinkIcon: Icon = ({ fill }) => (
+const LinkIcon: Icon = ({fill}) => (
   <svg
     width="24"
     height="20"
     viewBox="0 0 24 20"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"

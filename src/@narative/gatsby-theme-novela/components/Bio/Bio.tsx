@@ -1,23 +1,24 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby';
 import styled from '@emotion/styled';
 
 import Image from '@components/Image';
-import { IAuthor } from '@types';
+import {IAuthor} from '@types';
 
-const Bio: React.FC<IAuthor> = ({ author }) => {
+const Bio: React.FC<IAuthor> = ({author}) => {
   return (
     <BioContainer>
       <BioAvatar
         as={author.authorsPage ? Link : 'div'}
         to={author.slug}
         data-a11y="false"
-        aria-label="Author's bio">
+        aria-label="Author's bio"
+      >
         <BioAvatarInner>
           <RoundedImage src={author.avatar.medium} />
         </BioAvatarInner>
       </BioAvatar>
-      <BioText dangerouslySetInnerHTML={{ __html: author.bio }} />
+      <BioText dangerouslySetInnerHTML={{__html: author.bio}} />
     </BioContainer>
   );
 };

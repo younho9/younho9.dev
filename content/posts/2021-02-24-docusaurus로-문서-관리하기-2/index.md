@@ -157,7 +157,7 @@ const getFilesOf = (dir) =>
     .reduce(
       (files, fileName) =>
         fileName.includes('.') ? [...files, fileName] : files,
-      []
+      [],
     )
     .map((file) => path.parse(file).name);
 
@@ -167,7 +167,7 @@ const getDirectoriesOf = (dir) =>
     .readdirSync(dir)
     .reduce(
       (dirs, dirName) => (dirName.includes('.') ? dirs : [...dirs, dirName]),
-      []
+      [],
     );
 
 // docs 디렉토리에 있는 카테고리
@@ -181,7 +181,7 @@ const createSubCategoryItem = (category, subCategory) => ({
   type: 'category',
   label: SUB_CATEGORY_SLUGS[removePriority(subCategory)],
   items: getFilesOf(`docs/${category}/${subCategory}`).map(
-    (fileName) => `${category}/${subCategory}/${fileName}`
+    (fileName) => `${category}/${subCategory}/${fileName}`,
   ),
 });
 
@@ -190,10 +190,10 @@ module.exports = categories.reduce(
   (sidebars, category) => ({
     ...sidebars,
     [category]: getSubCategories(category).map((subCategory) =>
-      createSubCategoryItem(category, subCategory)
+      createSubCategoryItem(category, subCategory),
     ),
   }),
-  {}
+  {},
 );
 ```
 
@@ -257,7 +257,7 @@ yarn run swizzle @docusaurus/theme-classic BlogPostPage --danger
 `src/components/Comment.js`
 
 ```javascript
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 
 function Comment() {
   const containerRef = useRef(null);
@@ -307,13 +307,13 @@ export default Comment;
 `Comment.js`
 
 ```javascript
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
 const utterancesSelector = 'iframe.utterances-frame';
 
 function Comment() {
-  const { isDarkTheme } = useThemeContext();
+  const {isDarkTheme} = useThemeContext();
   const utterancesTheme = isDarkTheme ? 'github-dark' : 'github-light';
   const containerRef = useRef(null);
 

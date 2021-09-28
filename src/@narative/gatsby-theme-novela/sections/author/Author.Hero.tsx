@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import Image from '@components/Image';
 
 import mediaqueries from '@styles/media';
-import { IAuthor } from '@types';
+import {IAuthor} from '@types';
 
 import SocialLinks from '@components/SocialLinks';
 
@@ -12,7 +12,7 @@ interface AuthorHeroProps {
   author: IAuthor;
 }
 
-const AuthorHero: React.FC<AuthorHeroProps> = ({ author }) => {
+const AuthorHero: React.FC<AuthorHeroProps> = ({author}) => {
   return (
     <Hero>
       <HeroImage>

@@ -46,7 +46,7 @@ const byDate = (a, b) => new Date(b.dateForSEO) - new Date(a.dateForSEO);
 
 // ///////////////////////////////////////////////////////
 
-module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
+module.exports = async ({actions: {createPage}, graphql}, themeOptions) => {
   const {
     rootPath,
     basePath = '/',
@@ -57,7 +57,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     mailchimp = '',
   } = themeOptions;
 
-  const { data } = await graphql(`
+  const {data} = await graphql(`
     query siteQuery {
       site {
         siteMetadata {
@@ -69,15 +69,15 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
 
   console.log(sources);
   // Defaulting to look at the local MDX files as sources.
-  const { local = true, contentful = false } = sources;
+  const {local = true, contentful = false} = sources;
 
   let authors;
   let articles;
 
   const dataSources = {
-    local: { authors: [], articles: [] },
-    contentful: { authors: [], articles: [] },
-    netlify: { authors: [], articles: [] },
+    local: {authors: [], articles: []},
+    contentful: {authors: [], articles: []},
+    netlify: {authors: [], articles: []},
   };
 
   if (rootPath) {
@@ -96,11 +96,11 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       const localArticles = await graphql(query.local.articles);
 
       dataSources.local.authors = localAuthors.data.authors.edges.map(
-        normalize.local.authors
+        normalize.local.authors,
       );
 
       dataSources.local.articles = localArticles.data.articles.edges.map(
-        normalize.local.articles
+        normalize.local.articles,
       );
     } catch (error) {
       console.error(error);
@@ -114,12 +114,13 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       const contentfulArticles = await graphql(query.contentful.articles);
 
       dataSources.contentful.authors = contentfulAuthors.data.authors.edges.map(
-        normalize.contentful.authors
+        normalize.contentful.authors,
       );
 
-      dataSources.contentful.articles = contentfulArticles.data.articles.edges.map(
-        normalize.contentful.articles
-      );
+      dataSources.contentful.articles =
+        contentfulArticles.data.articles.edges.map(
+          normalize.contentful.articles,
+        );
     } catch (error) {
       console.error(error);
     }
@@ -141,7 +142,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       ...dataSources.contentful.authors,
       ...dataSources.netlify.authors,
     ],
-    'name'
+    'name',
   );
 
   if (articles.length === 0 || authors.length === 0) {
@@ -242,7 +243,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     authors.forEach((author) => {
       const articlesTheAuthorHasWritten = articlesThatArentSecret.filter(
         (article) =>
-          article.author.toLowerCase().includes(author.name.toLowerCase())
+          article.author.toLowerCase().includes(author.name.toLowerCase()),
       );
       const path = slugify(author.slug, authorsPath);
 

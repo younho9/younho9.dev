@@ -1,4 +1,4 @@
-module.exports = ({ actions }) => {
+module.exports = ({actions}) => {
   actions.createTypes(`
     type Article implements Node {
       id: ID!

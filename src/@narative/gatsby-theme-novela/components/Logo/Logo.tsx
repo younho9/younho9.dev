@@ -3,16 +3,17 @@ import styled from '@emotion/styled';
 
 import mediaqueries from '@styles/media';
 
-import { Icon } from '@types';
+import {Icon} from '@types';
 
-const Logo: Icon = ({ fill = 'white' }) => {
+const Logo: Icon = ({fill = 'white'}) => {
   return (
     <LogoContainer>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="150"
         height="45.252"
-        viewBox="0 0 150 45.252">
+        viewBox="0 0 150 45.252"
+      >
         <path
           id="path"
           data-name="path"

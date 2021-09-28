@@ -4,10 +4,10 @@
  * @see {@link https://artsy.github.io/blog/2018/11/21/conditional-types-in-typescript}
  */
 // Extract a specific action from a list of actions based on it's Type string
-type ExtractAction<A, T> = Extract<A, { type: T }>;
+type ExtractAction<A, T> = Extract<A, {type: T}>;
 
 // Exclude the "type" field from an object
-type ExcludeTypeField = { [K in Exclude<keyof A, 'type'>]: A[K] };
+type ExcludeTypeField = {[K in Exclude<keyof A, 'type'>]: A[K]};
 
 // If there are no params left after you exclude the "type" key,
 // then don't force the user to provide a payload (since {type: 'SOMETHING'} without payload works)

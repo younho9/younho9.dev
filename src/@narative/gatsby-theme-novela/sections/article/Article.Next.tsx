@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
-import { Link } from 'gatsby';
+import {css} from '@emotion/core';
+import {Link} from 'gatsby';
 
 import Headings from '@components/Headings';
 import Image from '@components/Image';
 
 import mediaqueries from '@styles/media';
 
-import { IArticle } from '@types';
+import {IArticle} from '@types';
 
 interface ArticlesNextProps {
   articles: IArticle[];
@@ -26,7 +26,7 @@ interface ArticlesNextProps {
  * as the next one suggested article, which requires special styling we didn't want to
  * mix into the generic list component.
  */
-const ArticlesNext: React.FC<ArticlesNextProps> = ({ articles }) => {
+const ArticlesNext: React.FC<ArticlesNextProps> = ({articles}) => {
   if (!articles) return null;
   const numberOfArticles = articles.length;
   return (
@@ -44,7 +44,7 @@ interface GridItemProps {
   narrow?: boolean;
 }
 
-const GridItem: React.FC<GridItemProps> = ({ article, narrow }) => {
+const GridItem: React.FC<GridItemProps> = ({article, narrow}) => {
   if (!article) return null;
 
   const hasOverflow = narrow && article.title.length > 35;
@@ -54,7 +54,8 @@ const GridItem: React.FC<GridItemProps> = ({ article, narrow }) => {
     <ArticleLink
       to={article.slug}
       data-a11y="false"
-      narrow={narrow ? 'true' : 'false'}>
+      narrow={narrow ? 'true' : 'false'}
+    >
       <Item>
         <ImageContainer>
           <Image src={imageSource} />
@@ -87,7 +88,7 @@ const limitToTwoLines = css`
     -webkit-line-clamp: 3;
   `}
 `;
-const Grid = styled.div<{ numberOfArticles: number }>`
+const Grid = styled.div<{numberOfArticles: number}>`
   position: relative;
   display: grid;
   ${(p) => {
@@ -174,7 +175,7 @@ const Title = styled(Headings.h3)`
   `}
 `;
 
-const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
+const Excerpt = styled.p<{narrow: boolean; hasOverflow: boolean}>`
   ${limitToTwoLines};
   font-size: 16px;
   margin-bottom: 10px;
@@ -210,7 +211,7 @@ const MetaData = styled.div`
   `}
 `;
 
-const ArticleLink = styled(Link)<{ narrow: string }>`
+const ArticleLink = styled(Link)<{narrow: string}>`
   position: relative;
   display: block;
   width: 100%;

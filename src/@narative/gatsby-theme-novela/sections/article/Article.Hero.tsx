@@ -2,10 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Headings from '@components/Headings';
-import Image, { ImagePlaceholder } from '@components/Image';
+import Image, {ImagePlaceholder} from '@components/Image';
 
 import mediaqueries from '@styles/media';
-import { IArticle, IAuthor } from '@types';
+import {IArticle, IAuthor} from '@types';
 
 import ArticleAuthors from './Article.Authors';
 
@@ -14,7 +14,7 @@ interface ArticleHeroProps {
   authors: IAuthor[];
 }
 
-const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
+const ArticleHero: React.FC<ArticleHeroProps> = ({article, authors}) => {
   const hasCoAUthors = authors.length > 1;
   const hasHeroImage =
     article.hero &&
@@ -73,7 +73,7 @@ const Hero = styled.div`
   `}
 `;
 
-const ArticleMeta = styled.div<{ hasCoAUthors: boolean }>`
+const ArticleMeta = styled.div<{hasCoAUthors: boolean}>`
   margin-left: ${(p) => (p.hasCoAUthors ? '10px' : '0')};
 
   ${mediaqueries.phablet`
@@ -127,7 +127,7 @@ const HeroHeading = styled(Headings.h1)`
   `}
 `;
 
-const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
+const HeroSubtitle = styled.div<{hasCoAUthors: boolean}>`
   position: relative;
   display: flex;
   font-size: 18px;

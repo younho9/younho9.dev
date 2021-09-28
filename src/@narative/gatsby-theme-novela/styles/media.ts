@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import {css} from '@emotion/core';
 
 import theme from '../gatsby-plugin-theme-ui';
 
@@ -33,7 +33,7 @@ const mediaqueries = theme.breakpoints.reduce(
       }
     `,
   }),
-  {}
+  {},
 );
 
 export const media = mediaqueries;

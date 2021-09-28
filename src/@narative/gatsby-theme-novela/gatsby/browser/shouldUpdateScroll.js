@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-module.exports = ({ routerProps, prevRouterProps, getSavedScrollPosition }) => {
+module.exports = ({routerProps, prevRouterProps, getSavedScrollPosition}) => {
   const currentPosition = getSavedScrollPosition(routerProps.location);
   const topOfPage = [0, 0];
 
@@ -14,7 +14,7 @@ module.exports = ({ routerProps, prevRouterProps, getSavedScrollPosition }) => {
   if (prevRouterProps) {
     window.localStorage.setItem(
       'previousPath',
-      prevRouterProps.location.pathname
+      prevRouterProps.location.pathname,
     );
   }
 

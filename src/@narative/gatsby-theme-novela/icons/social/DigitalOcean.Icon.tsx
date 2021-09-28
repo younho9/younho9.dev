@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { Icon } from '@types';
+import {Icon} from '@types';
 
-const DigitalOceanIcon: Icon = ({ fill = 'white' }) => (
+const DigitalOceanIcon: Icon = ({fill = 'white'}) => (
   <svg
     width="14"
     height="14"
     viewBox="0 0 512 512"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"

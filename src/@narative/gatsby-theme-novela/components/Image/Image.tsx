@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 import GatsbyImg from 'gatsby-image';
 
-import { IImg } from '@types';
+import {IImg} from '@types';
 
 /**
  * To soften the blur-up we get from the default configuration of gatbsy image
@@ -30,7 +30,7 @@ const StyledGatsbyImag = styled(GatsbyImg)`
  *
  * todo : lazyload the default img tag
  */
-const Image: React.FC<IImg> = ({ src, alt, ...props }) => {
+const Image: React.FC<IImg> = ({src, alt, ...props}) => {
   // We're going to build our final component's props dynamically.
   // So create a nice default set of props that are relevant to Gatsby and non Gatsby images
   const imgProps = {

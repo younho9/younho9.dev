@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/core';
+import {keyframes} from '@emotion/core';
 
 interface CSSFadeInProps {
   as?: string;
 }
 
-const CSSFadeIn: React.FC<CSSFadeInProps> = ({ as, children }) => {
+const CSSFadeIn: React.FC<CSSFadeInProps> = ({as, children}) => {
   return <Transition as={as}>{children}</Transition>;
 };
 

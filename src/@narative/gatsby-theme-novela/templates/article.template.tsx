@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import styled from '@emotion/styled';
 import throttle from 'lodash/throttle';
-import { graphql, useStaticQuery } from 'gatsby';
+import {graphql, useStaticQuery} from 'gatsby';
 
 import Layout from '@components/Layout';
 import MDXRenderer from '@components/MDX';
@@ -10,7 +10,7 @@ import Section from '@components/Section';
 import Subscription from '@components/Subscription';
 
 import mediaqueries from '@styles/media';
-import { debounce } from '@utils';
+import {debounce} from '@utils';
 
 import ArticleAside from '../sections/article/Article.Aside';
 import ArticleHero from '../sections/article/Article.Hero';
@@ -20,7 +20,7 @@ import ArticleSEO from '../sections/article/Article.SEO';
 import ArticleShare from '../sections/article/Article.Share';
 import ArticleUtterances from '../sections/article/Article.Utterances';
 
-import { Template } from '@types';
+import {Template} from '@types';
 
 const siteQuery = graphql`
   {
@@ -36,7 +36,7 @@ const siteQuery = graphql`
   }
 `;
 
-const Article: Template = ({ pageContext, location }) => {
+const Article: Template = ({pageContext, location}) => {
   const contentSectionRef = useRef<HTMLElement>(null);
 
   const [hasCalculated, setHasCalculated] = useState<boolean>(false);
@@ -45,7 +45,7 @@ const Article: Template = ({ pageContext, location }) => {
   const results = useStaticQuery(siteQuery);
   const name = results.allSite.edges[0].node.siteMetadata.name;
 
-  const { article, authors, mailchimp, next } = pageContext;
+  const {article, authors, mailchimp, next} = pageContext;
 
   useEffect(() => {
     const calculateBodySize = throttle(() => {

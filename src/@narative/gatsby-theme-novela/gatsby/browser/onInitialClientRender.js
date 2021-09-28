@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-const { globalHistory } = require('@reach/router');
+const {globalHistory} = require('@reach/router');
 
 function handleAccessibilityFocus() {
   const elementsWithA11yFocus = [...document.querySelectorAll('[data-a11y]')];

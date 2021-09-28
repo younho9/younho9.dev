@@ -2,8 +2,8 @@ import React from 'react';
 
 import SEO from '@components/SEO';
 
-import { IArticle, IAuthor } from '@types';
-import { graphql, useStaticQuery } from 'gatsby';
+import {IArticle, IAuthor} from '@types';
+import {graphql, useStaticQuery} from 'gatsby';
 
 const siteQuery = graphql`
   {
@@ -39,7 +39,7 @@ const ArticleSEO: React.FC<ArticleSEOProps> = ({
 
   const authorsData = authors.map((author) => ({
     '@type': 'Person',
-    name: author.name,
+    'name': author.name,
   }));
 
   // Checks if the source of the image is hosted on Contentful
@@ -95,7 +95,8 @@ const ArticleSEO: React.FC<ArticleSEOProps> = ({
       timeToRead={article.timeToRead}
       published={article.date}
       pathname={location.pathname}
-      canonicalUrl={article.canonical_url}>
+      canonicalUrl={article.canonical_url}
+    >
       <script type="application/ld+json">{microdata}</script>
     </SEO>
   );

@@ -1,6 +1,6 @@
-import { cosh } from 'core-js/fn/math';
-import React, { useRef, useLayoutEffect } from 'react';
-import { useColorMode } from 'theme-ui';
+import {cosh} from 'core-js/fn/math';
+import React, {useRef, useLayoutEffect} from 'react';
+import {useColorMode} from 'theme-ui';
 
 export interface IUtterancesProps {
   repo: string;
@@ -13,7 +13,7 @@ const ArticleUtterances: React.FC<IUtterancesProps> = () => {
   const utterancesTheme = colorMode === `dark` ? 'github-dark' : 'github-light';
   const containerRef = useRef<HTMLDivElement>(null);
   const utterancesEl = containerRef.current?.querySelector(
-    utterancesSelector
+    utterancesSelector,
   ) as HTMLIFrameElement | null;
 
   useLayoutEffect(() => {
@@ -21,13 +21,13 @@ const ArticleUtterances: React.FC<IUtterancesProps> = () => {
       const script = document.createElement('script');
 
       const attributes = {
-        src: 'https://utteranc.es/client.js',
-        repo: 'younho9/younho9.dev',
+        'src': 'https://utteranc.es/client.js',
+        'repo': 'younho9/younho9.dev',
         'issue-term': 'pathname',
-        label: 'comment',
-        theme: 'github-light',
-        crossOrigin: 'anonymous',
-        async: 'true',
+        'label': 'comment',
+        'theme': 'github-light',
+        'crossOrigin': 'anonymous',
+        'async': 'true',
       };
 
       Object.entries(attributes).forEach(([key, value]) => {

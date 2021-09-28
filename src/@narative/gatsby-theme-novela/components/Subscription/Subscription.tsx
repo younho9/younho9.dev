@@ -1,5 +1,5 @@
 import addToMailchimp from 'gatsby-plugin-mailchimp';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 import Section from '@components/Section';
 import Headings from '@components/Headings';
@@ -63,10 +63,11 @@ const Subscription: React.FC<{}> = () => {
               type="submit"
               hasError={error}
               subscribed={subscribed}
-              disabled={subscribed}>
+              disabled={subscribed}
+            >
               {subscribed ? <CheckMarkIcon /> : 'Subscribe'}
             </Button>
-            {error && <Error dangerouslySetInnerHTML={{ __html: error }} />}
+            {error && <Error dangerouslySetInnerHTML={{__html: error}} />}
           </Form>
         </Content>
       </SubscriptionContainer>
@@ -133,7 +134,7 @@ const Text = styled.p`
   `}
 `;
 
-const Form = styled.form<{ hasError: string }>`
+const Form = styled.form<{hasError: string}>`
   position: relative;
 
   &::after {
@@ -151,7 +152,7 @@ const Form = styled.form<{ hasError: string }>`
   }
 `;
 
-const Input = styled.input<{ hasError: string }>`
+const Input = styled.input<{hasError: string}>`
   position: relative;
   background: ${(p) =>
     p.hasError
@@ -184,7 +185,7 @@ const Input = styled.input<{ hasError: string }>`
   `}
 `;
 
-const Button = styled.button<{ hasError: string; subscribed: boolean }>`
+const Button = styled.button<{hasError: string; subscribed: boolean}>`
   position: absolute;
   left: 306px;
   top: 3px;
@@ -258,7 +259,8 @@ const CheckMarkIcon = () => (
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M9.00016 16.1698L4.83016 11.9998L3.41016 13.4098L9.00016 18.9998L21.0002 6.99984L19.5902 5.58984L9.00016 16.1698Z"
       fill="#08080B"

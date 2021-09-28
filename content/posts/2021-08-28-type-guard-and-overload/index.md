@@ -362,7 +362,7 @@ drinkDetailInfos.filter(isCoffee).map((value) => value.coffeeBean);
 또한, 현재 예시와 같은 서로소 집합 타입(discrimination union)일 때는, 굳이 오버로드를 사용하지 않고, 제네릭과 인터섹션을 활용하는 방법 있었다.
 
 ```ts
-function isCoffee<T extends Drink>(value: T): value is T & { type: 'coffee' } {
+function isCoffee<T extends Drink>(value: T): value is T & {type: 'coffee'} {
   return value.type === 'coffee';
 }
 ```

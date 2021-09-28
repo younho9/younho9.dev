@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 import styled from '@emotion/styled';
 
 import mediaqueries from '@styles/media';
@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const ImagePlaceholder: React.FC<{}> = (props) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [dimensions, setDimensions] = useState({width: 0, height: 0});
 
   useEffect(() => {
     setDimensions(containerRef.current.getBoundingClientRect());

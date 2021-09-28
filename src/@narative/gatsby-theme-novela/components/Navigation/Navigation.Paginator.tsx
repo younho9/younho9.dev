@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
-import { Link } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import {css} from '@emotion/core';
+import {Link} from 'gatsby';
+import {Helmet} from 'react-helmet';
 
 import mediaqueries from '@styles/media';
-import { range } from '@utils';
+import {range} from '@utils';
 
-import { IPaginator } from '@types';
+import {IPaginator} from '@types';
 
 /**
  * <Paginator />
@@ -75,7 +75,7 @@ class Paginator extends Component<IPaginator, {}> {
       truncatedRange.splice(
         pagesRange.length - 1 - maxPages,
         0,
-        pagesRange[0] - 1
+        pagesRange[0] - 1,
       );
     }
 
@@ -99,11 +99,12 @@ class Paginator extends Component<IPaginator, {}> {
         <PageNumberBUtton
           key={`PaginatorPage_${page}`}
           to={this.getFullPath(page)}
-          style={{ opacity: current === page ? 1 : 0.3 }}
-          className="Paginator__pageLink">
+          style={{opacity: current === page ? 1 : 0.3}}
+          className="Paginator__pageLink"
+        >
           {page}
         </PageNumberBUtton>
-      )
+      ),
     );
   }
 

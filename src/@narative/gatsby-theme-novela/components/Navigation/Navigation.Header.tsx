@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from '@emotion/styled';
-import { Link, navigate, graphql, useStaticQuery } from 'gatsby';
-import { useColorMode } from 'theme-ui';
+import {Link, navigate, graphql, useStaticQuery} from 'gatsby';
+import {useColorMode} from 'theme-ui';
 
 import Section from '@components/Section';
 import Logo from '@components/Logo';
@@ -16,7 +16,7 @@ import {
 
 const siteQuery = graphql`
   {
-    sitePlugin(name: { eq: "@narative/gatsby-theme-novela" }) {
+    sitePlugin(name: {eq: "@narative/gatsby-theme-novela"}) {
       pluginOptions {
         rootPath
         basePath
@@ -40,7 +40,8 @@ const DarkModeToggle: React.FC<{}> = () => {
       onClick={toggleColorMode}
       data-a11y="false"
       aria-label={isDark ? 'Activate light mode' : 'Activate dark mode'}
-      title={isDark ? 'Activate light mode' : 'Activate dark mode'}>
+      title={isDark ? 'Activate light mode' : 'Activate dark mode'}
+    >
       <MoonOrSun isDark={isDark} />
       <MoonMask isDark={isDark} />
     </IconWrapper>
@@ -70,7 +71,8 @@ const SharePageButton: React.FC<{}> = () => {
       onClick={copyToClipboardOnClick}
       data-a11y="false"
       aria-label="Copy URL to clipboard"
-      title="Copy URL to clipboard">
+      title="Copy URL to clipboard"
+    >
       <Icons.Link fill={fill} />
       <ToolTip isDark={isDark} hasCopied={hasCopied}>
         Copied
@@ -82,14 +84,14 @@ const SharePageButton: React.FC<{}> = () => {
 const NavigationHeader: React.FC<{}> = () => {
   const [showBackArrow, setShowBackArrow] = useState<boolean>(false);
   const [previousPath, setPreviousPath] = useState<string>('/');
-  const { sitePlugin } = useStaticQuery(siteQuery);
+  const {sitePlugin} = useStaticQuery(siteQuery);
 
   const [colorMode] = useColorMode();
   const fill = colorMode === 'dark' ? '#fff' : '#000';
-  const { rootPath, basePath } = sitePlugin.pluginOptions;
+  const {rootPath, basePath} = sitePlugin.pluginOptions;
 
   useEffect(() => {
-    const { width } = getWindowDimensions();
+    const {width} = getWindowDimensions();
     const phablet = getBreakpointFromTheme('phablet');
 
     const prev = localStorage.getItem('previousPath');
@@ -98,7 +100,7 @@ const NavigationHeader: React.FC<{}> = () => {
     const isNotPaginated = !location.pathname.includes('/page/');
 
     setShowBackArrow(
-      previousPathWasHomepage && isNotPaginated && width <= phablet
+      previousPathWasHomepage && isNotPaginated && width <= phablet,
     );
     setPreviousPath(prev);
   }, []);
@@ -111,7 +113,8 @@ const NavigationHeader: React.FC<{}> = () => {
           data-a11y="false"
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage"
-          back={showBackArrow ? 'true' : 'false'}>
+          back={showBackArrow ? 'true' : 'false'}
+        >
           {showBackArrow && (
             <BackArrowIconContainer>
               <Icons.ChevronLeft fill={fill} />
@@ -125,7 +128,8 @@ const NavigationHeader: React.FC<{}> = () => {
             <button
               onClick={() => navigate(previousPath)}
               title="Navigate back to the homepage"
-              aria-label="Navigate back to the homepage">
+              aria-label="Navigate back to the homepage"
+            >
               <Icons.Ex fill={fill} />
             </button>
           ) : (
@@ -175,7 +179,7 @@ const NavContainer = styled.div`
   }
 `;
 
-const LogoLink = styled(Link)<{ back: string }>`
+const LogoLink = styled(Link)<{back: string}>`
   position: relative;
   display: flex;
   align-items: center;
@@ -214,7 +218,7 @@ const NavControls = styled.div`
   `}
 `;
 
-const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
+const ToolTip = styled.div<{isDark: boolean; hasCopied: boolean}>`
   position: absolute;
   padding: 4px 13px;
   background: ${(p) => (p.isDark ? '#000' : 'rgba(0,0,0,0.1)')};
@@ -241,7 +245,7 @@ const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
   }
 `;
 
-const IconWrapper = styled.button<{ isDark: boolean }>`
+const IconWrapper = styled.button<{isDark: boolean}>`
   opacity: 0.5;
   position: relative;
   border-radius: 5px;
@@ -282,7 +286,7 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
 `;
 
 // This is based off a codepen! Much appreciated to: https://codepen.io/aaroniker/pen/KGpXZo
-const MoonOrSun = styled.div<{ isDark: boolean }>`
+const MoonOrSun = styled.div<{isDark: boolean}>`
   position: relative;
   width: 24px;
   height: 24px;
@@ -334,7 +338,7 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
   }
 `;
 
-const MoonMask = styled.div<{ isDark: boolean }>`
+const MoonMask = styled.div<{isDark: boolean}>`
   position: absolute;
   right: -1px;
   top: -8px;

@@ -31,9 +31,9 @@ const StyledTable = styled.table`
   `};
 `;
 
-const Table: React.FC<{}> = ({ children }) => {
+const Table: React.FC<{}> = ({children}) => {
   return (
-    <div style={{ overflowX: 'auto', padding: '0 20px' }}>
+    <div style={{overflowX: 'auto', padding: '0 20px'}}>
       <StyledTable>{children}</StyledTable>
     </div>
   );

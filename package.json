@@ -10,6 +10,7 @@
     "proxy": "netlify-cms-proxy-server",
     "format": "prettier --write ."
   },
+  "prettier": "@younho9/prettier-config",
   "dependencies": {
     "@narative/gatsby-theme-novela": "0.14.4",
     "gatsby": "2.21.9",
@@ -22,8 +23,11 @@
     "gatsby-plugin-sitemap": "2.4.2",
     "netlify-cms-app": "^2.11.23",
     "netlify-cms-proxy-server": "^1.1.4",
-    "prettier": "2.2.1",
+    "prettier": "2.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@younho9/prettier-config": "2.0.1"
   }
 }

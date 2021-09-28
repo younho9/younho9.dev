@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from '@emotion/styled';
 import throttle from 'lodash/throttle';
 
-import { clamp } from '@utils';
+import {clamp} from '@utils';
 
 export interface IProgress {
   contentHeight: number;
 }
 
-const Progress: React.FC<IProgress> = ({ contentHeight }) => {
+const Progress: React.FC<IProgress> = ({contentHeight}) => {
   const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Progress: React.FC<IProgress> = ({ contentHeight }) => {
   return (
     <ProgressContainer tabIndex={-1}>
       <Trackline aria-hidden="true">
-        <ProgressLine style={{ transform: `translateY(${progress}%)` }} />
+        <ProgressLine style={{transform: `translateY(${progress}%)`}} />
       </Trackline>
     </ProgressContainer>
   );

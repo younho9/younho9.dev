@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import throttle from 'lodash/throttle';
 
 import theme from '../gatsby-plugin-theme-ui';
@@ -68,7 +68,7 @@ export const debounce = (fn: () => any, time = 100) => {
 export const getBreakpointFromTheme: (arg0: string) => number = (name) =>
   theme.breakpoints.find(([label, _]) => label === name)![1];
 
-export const getWindowDimensions = (): { height: number; width: number } => {
+export const getWindowDimensions = (): {height: number; width: number} => {
   if (typeof window !== 'undefined') {
     const width =
       window.innerWidth ||
@@ -93,12 +93,12 @@ export const getWindowDimensions = (): { height: number; width: number } => {
 };
 
 export function useResize() {
-  const [dimensions, setDimensions] = useState({ width: 1280, height: 900 });
+  const [dimensions, setDimensions] = useState({width: 1280, height: 900});
 
   useEffect(() => {
     const handleResize = throttle(
       () => setDimensions(getWindowDimensions()),
-      50
+      50,
     );
 
     window.addEventListener('resize', handleResize);
@@ -213,7 +213,7 @@ export const getHighlightedTextPositioning = () => {
     }
   }
 
-  return { x, y };
+  return {x, y};
 };
 
 function isOrContains(node, container) {
@@ -246,13 +246,13 @@ function elementContainsSelection(el) {
 
 export const getSelectionDimensions = () => {
   const isSelectedInPrism = Array.from(
-    document.getElementsByClassName('prism-code')
+    document.getElementsByClassName('prism-code'),
   )
     .map((el) => elementContainsSelection(el))
     .some((bool) => bool);
 
   const isSelectedInArticle = Array.from(
-    document.getElementsByTagName('article')
+    document.getElementsByTagName('article'),
   )
     .map((el) => elementContainsSelection(el))
     .some((bool) => bool);
@@ -293,7 +293,7 @@ export const getSelectionDimensions = () => {
     }
   }
 
-  return { width, height };
+  return {width, height};
 };
 
 export function getSelectionText() {

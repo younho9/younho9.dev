@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { Icon } from '@types';
+import {Icon} from '@types';
 
-const ToggleClose: Icon = ({ fill }) => (
+const ToggleClose: Icon = ({fill}) => (
   <svg
     width="17"
     height="17"
     viewBox="0 0 17 17"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M11.6796 14L8.50023 10.8276L5.32088 14L4.34422 13.0233L8.50023 8.86732L12.6563 13.0233L11.6796 14Z"
       fill={fill}

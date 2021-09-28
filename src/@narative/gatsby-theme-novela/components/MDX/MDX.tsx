@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { MDXProvider } from '@mdx-js/react';
+import {MDXRenderer} from 'gatsby-plugin-mdx';
+import {MDXProvider} from '@mdx-js/react';
 
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
-import { useColorMode } from 'theme-ui';
+import {css} from '@emotion/core';
+import {useColorMode} from 'theme-ui';
 
 import Anchor from '@components/Anchor';
 import Blockquote from '@components/Blockquote';
@@ -15,11 +15,11 @@ import HorizontalRule from '@components/HorizontalRule';
 import Lists from '@components/Lists';
 import Paragraph from '@components/Paragraph';
 import Tables from '@components/Tables';
-import { ImageZoom } from '@components/Image';
+import {ImageZoom} from '@components/Image';
 import Figcaption from '@components/Figcaption';
 
 import mediaqueries from '@styles/media';
-import { toKebabCase } from '@utils';
+import {toKebabCase} from '@utils';
 
 const components = {
   img: ImageZoom,
@@ -48,7 +48,7 @@ interface MDXProps {
   content: React.ReactNode;
 }
 
-const MDX: React.FC<MDXProps> = ({ content, children, ...props }) => {
+const MDX: React.FC<MDXProps> = ({content, children, ...props}) => {
   const [colorMode] = useColorMode();
 
   return (

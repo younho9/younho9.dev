@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import React, {useContext} from 'react';
+import {graphql, useStaticQuery} from 'gatsby';
 import styled from '@emotion/styled';
 
 import Section from '@components/Section';
 import Bio from '@components/Bio';
 import Icons from '@icons';
 import mediaqueries from '@styles/media';
-import { IAuthor } from '@types';
+import {IAuthor} from '@types';
 
-import { GridLayoutContext } from './Articles.List.Context';
+import {GridLayoutContext} from './Articles.List.Context';
 
 const authorQuery = graphql`
   {
@@ -27,10 +27,12 @@ const authorQuery = graphql`
   }
 `;
 
-const ArticlesHero: React.FC<IAuthor> = ({ authors }) => {
-  const { gridLayout = 'tiles', hasSetGridLayout, setGridLayout } = useContext(
-    GridLayoutContext
-  );
+const ArticlesHero: React.FC<IAuthor> = ({authors}) => {
+  const {
+    gridLayout = 'tiles',
+    hasSetGridLayout,
+    setGridLayout,
+  } = useContext(GridLayoutContext);
 
   const results = useStaticQuery(authorQuery);
   const hero = results.site.edges[0].node.siteMetadata.hero;
@@ -46,8 +48,8 @@ const ArticlesHero: React.FC<IAuthor> = ({ authors }) => {
 
   return (
     <Section relative id="Articles__Hero">
-      <HeadingContainer style={{ maxWidth: `${hero.maxWidth}px` }}>
-        <HeroHeading dangerouslySetInnerHTML={{ __html: hero.heading }} />
+      <HeadingContainer style={{maxWidth: `${hero.maxWidth}px`}}>
+        <HeroHeading dangerouslySetInnerHTML={{__html: hero.heading}} />
       </HeadingContainer>
       <SubheadingContainer>
         <Bio author={featuredAuthor} />
@@ -57,7 +59,8 @@ const ArticlesHero: React.FC<IAuthor> = ({ authors }) => {
             active={tilesIsActive}
             data-a11y="false"
             title="Show articles in Tile grid"
-            aria-label="Show articles in Tile grid">
+            aria-label="Show articles in Tile grid"
+          >
             <Icons.Tiles />
           </GridButton>
           <GridButton
@@ -65,7 +68,8 @@ const ArticlesHero: React.FC<IAuthor> = ({ authors }) => {
             active={!tilesIsActive}
             data-a11y="false"
             title="Show articles in Row grid"
-            aria-label="Show articles in Row grid">
+            aria-label="Show articles in Row grid"
+          >
             <Icons.Rows />
           </GridButton>
         </GridControlsContainer>
@@ -136,7 +140,7 @@ const HeroHeading = styled.h1`
   `}
 `;
 
-const GridButton = styled.button<{ active: boolean }>`
+const GridButton = styled.button<{active: boolean}>`
   position: relative;
   display: flex;
   align-items: center;

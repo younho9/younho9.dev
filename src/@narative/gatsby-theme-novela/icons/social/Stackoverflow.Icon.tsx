@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { Icon } from '@types';
+import {Icon} from '@types';
 
-const StackoverflowIcon: Icon = ({ fill = 'white' }) => (
+const StackoverflowIcon: Icon = ({fill = 'white'}) => (
   <svg
     width="15"
     height="15"
     viewBox="0 0 73.1 86.6"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/core';
-import { useColorMode } from 'theme-ui';
+import {keyframes} from '@emotion/core';
+import {useColorMode} from 'theme-ui';
 
 import Icons from '@icons';
 
@@ -31,7 +31,7 @@ const ArticleShare: React.FC<{}> = () => {
   const [text, setText] = useState('');
   const [focus, setFocus] = useState(false);
   const [canTweet, setCanTweet] = useState(true);
-  const [{ x, y, show }, setPosition] = useState<MenuFloatState>({
+  const [{x, y, show}, setPosition] = useState<MenuFloatState>({
     x: 0,
     y: 0,
     show: false,
@@ -52,26 +52,26 @@ const ArticleShare: React.FC<{}> = () => {
        */
       setTimeout(() => {
         const article = document.getElementsByTagName('article')[0];
-        const paragraphOffset = document.getElementsByTagName('p')[0]
-          .offsetLeft;
+        const paragraphOffset =
+          document.getElementsByTagName('p')[0].offsetLeft;
 
         if (!article) return;
 
         // We want to not show the menu float in code blocks
         const codeBlocks = Array.from(
-          article.getElementsByClassName('prism-code')
+          article.getElementsByClassName('prism-code'),
         );
         const isHighlightedInCodeBlock = codeBlocks.some((block) =>
-          window.getSelection().containsNode(block, true)
+          window.getSelection().containsNode(block, true),
         );
 
         if (isHighlightedInCodeBlock) return;
 
         const articleBox = article.getBoundingClientRect() as DOMRect;
 
-        const { width, height } = getSelectionDimensions();
-        const { x, y } = getHighlightedTextPositioning();
-        const { width: windowWidth } = getWindowDimensions();
+        const {width, height} = getSelectionDimensions();
+        const {x, y} = getHighlightedTextPositioning();
+        const {width: windowWidth} = getWindowDimensions();
         const tablet = getBreakpointFromTheme('tablet');
         const desktop = getBreakpointFromTheme('desktop');
 
@@ -95,7 +95,7 @@ const ArticleShare: React.FC<{}> = () => {
          * then start the position from the left most edge so we can center the bar in
          * the middle of the text area
          */
-        const offset: { x: number; y: number } = {
+        const offset: {x: number; y: number} = {
           x: height > 29 ? paragraphOffset + paddingOffset : x,
           y: y - articleBox.y - 160,
         };
@@ -112,13 +112,13 @@ const ArticleShare: React.FC<{}> = () => {
 
     // attach all events
     events.forEach((event) =>
-      window.addEventListener(event, handleMenuFloatSettings)
+      window.addEventListener(event, handleMenuFloatSettings),
     );
 
     return () => {
       // remove all events after mount
       events.forEach((event) =>
-        window.removeEventListener(event, handleMenuFloatSettings)
+        window.removeEventListener(event, handleMenuFloatSettings),
       );
     };
   }, [show]);
@@ -130,7 +130,7 @@ const ArticleShare: React.FC<{}> = () => {
    */
   useEffect(() => {
     setTimeout(() => {
-      const { width } = getSelectionDimensions();
+      const {width} = getSelectionDimensions();
       setFocus(width > 1);
     }, 0);
   }, [show]);
@@ -166,7 +166,8 @@ const ArticleShare: React.FC<{}> = () => {
         display: show && focus ? 'flex' : 'none',
         pointerEvents: show && focus ? 'initial' : 'none',
       }}
-      isDark={isDark}>
+      isDark={isDark}
+    >
       <MenuText>Share: </MenuText>
       <ReferralLink disabled={!canTweet} share={share.twitter}>
         <Icons.Twitter width="18px" height="15px" />
@@ -184,7 +185,7 @@ const ArticleShare: React.FC<{}> = () => {
 
 export default ArticleShare;
 
-function ReferralLink({ disabled, share, children }) {
+function ReferralLink({disabled, share, children}) {
   function handleClick(event) {
     event.preventDefault();
     if (disabled) return;
@@ -192,7 +193,7 @@ function ReferralLink({ disabled, share, children }) {
     window.open(
       share,
       '',
-      'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'
+      'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600',
     );
   }
 
@@ -200,7 +201,8 @@ function ReferralLink({ disabled, share, children }) {
     <MenuShare
       href={disabled ? '' : share}
       onClick={handleClick}
-      disabled={disabled}>
+      disabled={disabled}
+    >
       <Hidden>Share the selected text</Hidden>
       {children}
     </MenuShare>
@@ -240,7 +242,7 @@ const popUpwards = keyframes`
   }
 `;
 
-const MenuFloat = styled.div<{ isDark: boolean }>`
+const MenuFloat = styled.div<{isDark: boolean}>`
   position: absolute;
   align-items: center;
   z-index: 1;
@@ -288,7 +290,7 @@ const Hidden = styled.div`
   opacity: 0;
 `;
 
-const MenuShare = styled.a<{ disabled: boolean }>`
+const MenuShare = styled.a<{disabled: boolean}>`
   display: flex;
   align-items: center;
   padding: 16px 11px;

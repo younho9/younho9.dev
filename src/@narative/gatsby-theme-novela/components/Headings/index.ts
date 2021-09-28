@@ -1,1 +1,1 @@
-export { default } from './Headings';
+export {default} from './Headings';

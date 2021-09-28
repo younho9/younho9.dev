@@ -50,13 +50,13 @@ function normalizeAvatar(author) {
 }
 
 module.exports.local = {
-  articles: ({ node: article }) => {
+  articles: ({node: article}) => {
     return {
       ...article,
       hero: normalizeHero(article),
     };
   },
-  authors: ({ node: author }) => {
+  authors: ({node: author}) => {
     return {
       ...author,
       avatar: normalizeAvatar(author),
@@ -65,7 +65,7 @@ module.exports.local = {
 };
 
 module.exports.contentful = {
-  articles: ({ node: article }) => {
+  articles: ({node: article}) => {
     const author = article.author.reduce((curr, next, index, array) => {
       if (array.length === 1) {
         return next.name;
@@ -81,10 +81,10 @@ module.exports.contentful = {
       timeToRead: article.body.childMdx.timeToRead,
     };
   },
-  authors: ({ node: author }) => {
+  authors: ({node: author}) => {
     return {
       ...author,
-      social: author.social.map((s) => ({ url: s })),
+      social: author.social.map((s) => ({url: s})),
       slug: author.fields.slug,
       authorsPage: author.fields.authorsPage,
     };

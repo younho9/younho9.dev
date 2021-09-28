@@ -36,10 +36,7 @@ const getHostname = (url) => {
   return new URL(url.toLowerCase()).hostname.replace('www.', '').split('.')[0];
 };
 
-const SocialLinks: React.FC<SocialLinksProps> = ({
-  links,
-  fill = '#73737D',
-}) => {
+const SocialLinks: React.FC<SocialLinksProps> = ({links, fill = '#73737D'}) => {
   if (!links) return null;
 
   return (
@@ -49,7 +46,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
         const Icon = icons[name];
         if (!Icon) {
           throw new Error(
-            `unsupported social link name=${name} / url=${option.url}`
+            `unsupported social link name=${name} / url=${option.url}`,
           );
         }
         return (
@@ -59,7 +56,8 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
             rel="noopener nofollow"
             data-a11y="false"
             aria-label={`Link to ${option.url}`}
-            href={option.url}>
+            href={option.url}
+          >
             <Icon fill={fill} />
             <Hidden>Link to ${option.url}</Hidden>
           </SocialIconContainer>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { graphql, useStaticQuery } from 'gatsby';
+import {graphql, useStaticQuery} from 'gatsby';
 
 import Section from '@components/Section';
 import SocialLinks from '@components/SocialLinks';
@@ -23,8 +23,8 @@ const siteQuery = graphql`
       }
     }
     allMdx(
-      sort: { fields: frontmatter___date, order: ASC }
-      filter: { frontmatter: { date: { ne: null } } }
+      sort: {fields: frontmatter___date, order: ASC}
+      filter: {frontmatter: {date: {ne: null}}}
     ) {
       edges {
         node {
@@ -39,12 +39,12 @@ const siteQuery = graphql`
 
 const Footer: React.FC<{}> = () => {
   const results = useStaticQuery(siteQuery);
-  const { name, social } = results.allSite.edges[0].node.siteMetadata;
+  const {name, social} = results.allSite.edges[0].node.siteMetadata;
 
   const copyrightDate = (() => {
-    const { edges } = results.allMdx;
+    const {edges} = results.allMdx;
     const years = [0, edges.length - 1].map((edge) =>
-      new Date(edges[edge].node.frontmatter.date).getFullYear()
+      new Date(edges[edge].node.frontmatter.date).getFullYear(),
     );
     return years[0] === years[1] ? `${years[0]}` : `${years[0]}–${years[1]}`;
   })();
