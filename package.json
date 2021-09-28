@@ -8,7 +8,7 @@
     "dev": "gatsby develop",
     "clean": "gatsby clean",
     "proxy": "netlify-cms-proxy-server",
-    "format": "prettier --write ."
+    "format": "prettier --write . --ignore-path ./node_modules/@younho9/prettier-config/.prettierignore"
   },
   "prettier": "@younho9/prettier-config",
   "dependencies": {
@@ -28,6 +28,6 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@younho9/prettier-config": "2.0.1"
+    "@younho9/prettier-config": "2.1.0"
   }
 }

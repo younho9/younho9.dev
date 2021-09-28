@@ -2514,10 +2514,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@younho9/prettier-config@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@younho9/prettier-config/-/prettier-config-2.0.1.tgz#5036965023b9ce9e2ed26b002c4f039b3c1376f5"
-  integrity sha512-D7OjvWBWqRQ2YJx491bRT/Bo8OcXvPJHN0ULiOCW0EJmCMA6aVTl69EpMJO9FooPnkdP2Nw7+BftdUiYVrGI2A==
+"@younho9/prettier-config@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@younho9/prettier-config/-/prettier-config-2.1.0.tgz#a1fd52efeb43d14af9e9aa94bb6f3c469620b813"
+  integrity sha512-cWlKFKBu1md4+kY1mIKBRPd1huJ+4RI7DLRk/kD3SfX7z4GUxkP18tXbtZqzqb3YVNML26uqkgELPxGO4QackQ==
   dependencies:
     "@types/prettier" "2.4.1"
 
