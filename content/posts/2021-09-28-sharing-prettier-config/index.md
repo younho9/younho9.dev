@@ -1,11 +1,11 @@
 ---
-hero: ./images/2021-09-28-sharing-prettier-config-1.png
+hero: ./images/2021-09-28-sharing-prettier-config-1.jpeg
 slug: 'sharing-prettier-config'
 title: '프리티어(Prettier) 설정 공유하기'
 date: 2021-09-28
 tags: ['Prettier']
 author: younho9
-excerpt: 개인 프로젝트의 프리티어 설정을 일관되게 유지하자.
+excerpt: 프로젝트의 프리티어 설정을 일관되게 유지하자.
 ---
 
 ## TL;DR
