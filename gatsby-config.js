@@ -17,10 +17,6 @@ module.exports = {
         name: `instagram`,
         url: `https://www.instagram.com/younho_9/`,
       },
-      {
-        name: `notion`,
-        url: `https://www.notion.so/younho9-Blog-9ed630c8603541bab20662b4854a891f`,
-      },
     ],
   },
   plugins: [
